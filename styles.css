@@ -24,7 +24,7 @@ header {
     justify-content: start;
 }
 
-.introduction {
+.introduction.container.home {
     display: flex; /* Enable Flexbox */
     justify-content: center; /* Center children horizontally */
     align-items: center; /* Center children vertically */
@@ -34,7 +34,6 @@ header {
     /* Ensure the container is at least as wide as the sum of its children */
     min-height: 40vh; /* Optional: if you want the container to fill the screen height */
 }
-
 
 .intro-image img {
     width: 250px; /* Adjust width as needed */
@@ -138,9 +137,9 @@ header {
 
 .subsection img {
     width: 250px; /* Adjust as needed */
-    height: 130px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
     object-fit: cover; /* This will cover the area without stretching the image */
-    margin-bottom: 10px; /* Space below the image */
+    margin-bottom: 5px; /* Space below the image */
 }
 
 
@@ -194,4 +193,101 @@ header {
 
 .download-button:hover {
     background-color: #3a403a;
+}
+
+
+/* PhD Page */
+.header-container {
+    margin-right: 8%; 
+    margin-left: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0%; /* Adjust as needed */
+    margin-bottom: 0px;
+ 
+}
+
+.introduction.container.PhD {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    flex-direction: row; /* Lay out children in a row */
+    text-align: center; /* Center text for all children */
+    padding: 10px; /* Add some padding */
+    /* Ensure the container is at least as wide as the sum of its children */
+    min-height: 20vh; /* Optional: if you want the container to fill the screen height */
+}
+
+.intro-text-PhD {
+    max-width: 640px; /* Adjust max-width as needed for desired line length */
+    text-align: justify;
+    margin-bottom: 0px;
+}
+
+.studies.container {
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Stack the study-abstracts vertically */
+    justify-content: space-between; /* Spaces the children evenly */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+    gap: 10px; /* Optional: adds space between the columns */
+}
+
+.study-abstract {
+    background: #f8f8f8; /* Light gray background */
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px; /* Slightly rounded corners for the border */
+    padding: 20px; /* Padding inside the abstract boxes */
+    width: 48%; /* Sets the width to less than half the parent container, allowing for two columns */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    margin-top: 0;
+
+    flex: 1; /* Each abstract will grow to fill the flex container equally */
+    height: 620px;
+}
+
+.study-abstract h2,
+.study-abstract h3,
+.study-abstract .authors,
+.study-abstract .institution {
+    text-align: center;
+}
+
+/* Study ONE */
+.study-abstract h2 {
+    text-align: center;
+    font-size: 16px; /* This is an example size. Adjust as needed. */
+    /* Other styles... */
+}
+
+/* Title */
+.study-abstract h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Authors and Institution */
+.authors,
+.institution {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+/* Abstract */
+.study-abstract h4 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Abstract Content */
+.abstract-content {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+/* Add responsive adjustments if needed */
+@media (max-width: 768px) {
+    .study-abstract {
+        width: 100%; /* Each abstract takes full width on smaller screens */
+    }
 }
