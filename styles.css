@@ -171,3 +171,20 @@ header {
     height: auto; /* Maintain the aspect ratio */
     margin: 0 2%; /* 2% margin on each side of the image */
 }
+
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #4CAF50; /* or any color you prefer */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
