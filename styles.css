@@ -12,7 +12,7 @@ body {
     width: 80%;
     margin: auto;
     overflow: hidden;
-    padding: 5px 20px; /* Adjust padding to fit your design */
+    padding: 5px 0px; /* Adjust padding to fit your design */
 }
 
 header {
@@ -28,6 +28,7 @@ header {
     border-radius: 50%; /* Creates the circular shape */
     overflow: hidden; /* Ensures nothing spills outside the circle */
     line-height: 0; /* Removes any extra line-height space around the image */
+    border: 2px solid black; 
     height: auto; /* Adjust as needed, or set a fixed height */
     width: auto; /* Adjust as needed, or set a fixed width */
 }
@@ -46,28 +47,44 @@ h1 {
 }
 
 .introduction.container.home {
-    display: flex; /* Enable Flexbox */
-    justify-content: center; /* Center children horizontally */
-    align-items: center; /* Center children vertically */
-    flex-direction: row; /* Lay out children in a row */
+    display: flex;
+    text-align: center;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
     text-align: center; /* Center text for all children */
-    padding: 10px; /* Add some padding */
-    /* Ensure the container is at least as wide as the sum of its children */
-    min-height: 40vh; /* Optional: if you want the container to fill the screen height */
+    min-height: 48vh;
+}
+
+
+/* Ensure the 'Hello!' text is styled appropriately */
+.introduction.container.home > h1 {
+    margin-bottom: -20px; /* this moves the text up and down!' */
+    font-size: 46px; /* Large font size for 'Hello!' */
+
+}
+
+.image-and-text {
+    display: flex; /* Enable Flexbox for this container */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+
 }
 
 .intro-image img {
-    width: 250px; /* Adjust width as needed */
-    height: 250px; /* Adjust height as needed */
-    /*border-radius: 50%;  Makes the image round */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 20px; /* Adds spacing between the image and the text */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-top: 70px;
+    border-radius: 25px;
 }
 
 .intro-text {
-    max-width: 640px; /* Adjust max-width as needed for desired line length */
+    max-width: 500px;
     text-align: justify;
+    margin-top: 0;
 }
+
 
 /* Additional media query to handle responsiveness on smaller screens */
 @media (max-width: 768px) {
@@ -86,14 +103,11 @@ h1 {
     }
 }
 
-.section {
-    text-align: center;
-}
 
 
 .read-about-banner {
     background-color: #e0bebe; /* Light grey background */
-    padding: 1px 0; /* Padding above and below the text */
+    padding: 2px 0; /* Padding above and below the text */
     text-align: center; /* Center the text */
     width: 100%; /* Ensure the banner spans the full width */
 }
