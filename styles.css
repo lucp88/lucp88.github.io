@@ -6,22 +6,43 @@ body {
 }
 
 .container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the items */
+    justify-content: flex-start; /* Spaces items evenly */
     width: 80%;
     margin: auto;
     overflow: hidden;
+    padding: 5px 20px; /* Adjust padding to fit your design */
 }
 
 header {
     background: #b99b9b;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    /* Removed padding here as it's now in the .container class */
+    /* Removed text-align here because flexbox will handle alignment */
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
+
+.home-button {
+    display: inline-block; /* Makes the link inline but block-level */
+    border-radius: 50%; /* Creates the circular shape */
+    overflow: hidden; /* Ensures nothing spills outside the circle */
+    line-height: 0; /* Removes any extra line-height space around the image */
+    height: auto; /* Adjust as needed, or set a fixed height */
+    width: auto; /* Adjust as needed, or set a fixed width */
+}
+
+.home-button img {
+    display: block; /* Removes any inline spacing */
+    width: 110px; /* Sets the width of the image */
+    height: 110px; /* Sets the height of the image */
+    object-fit: cover; /* Ensures the image covers the area */
+    /* Adjust width and height as needed to fit your design */
+}
+
+h1 {
+    margin-left: 20px; /* Add space between the logo and the title */
+    /* Rest of your styles */
 }
 
 .introduction.container.home {
