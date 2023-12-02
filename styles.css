@@ -1,0 +1,173 @@
+body {
+    font-family: Raleway, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #b99b9b;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.introduction {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    flex-direction: row; /* Lay out children in a row */
+    text-align: center; /* Center text for all children */
+    padding: 10px; /* Add some padding */
+    /* Ensure the container is at least as wide as the sum of its children */
+    min-height: 40vh; /* Optional: if you want the container to fill the screen height */
+}
+
+
+.intro-image img {
+    width: 250px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    /*border-radius: 50%;  Makes the image round */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-right: 20px; /* Adds spacing between the image and the text */
+}
+
+.intro-text {
+    max-width: 640px; /* Adjust max-width as needed for desired line length */
+    text-align: justify;
+}
+
+/* Additional media query to handle responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .introduction {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-image img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+}
+
+.section {
+    text-align: center;
+}
+
+
+.read-about-banner {
+    background-color: #e0bebe; /* Light grey background */
+    padding: 1px 0; /* Padding above and below the text */
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure the banner spans the full width */
+}
+
+.options-banner {
+    background-color: #e8dede; /* Light grey background */
+    padding: 1px 0; /* Padding above and below the text */
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure the banner spans the full width */
+    margin: 0; 
+}
+
+
+.options-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent the options from wrapping */
+    gap: 0px; /* Adjust the space between grid items */
+    padding: 0px 0; /* Space above and below the grid */
+    max-width: 1200px; /* Maximum width of the grid */
+    margin: auto; /* Center the grid in the section */
+}
+
+.subsection {
+    flex: 1; /* Allow the items to grow and take up equal space */
+    margin: 0px; /* Adjust the margin as needed */
+    padding: 20px;
+    /* Keep your other styles (background, padding, box-shadow, etc.) */
+}
+
+
+@media (max-width: 1200px) {
+    .options-grid {
+        flex-wrap: wrap; /* Allow wrapping on medium screens */
+    }
+
+    .subsection {
+        /* Adjust the width for 2 items per row or full width as needed */
+        max-width: calc(50% - 20px);
+        flex: none; /* Disable flex grow */
+    }
+}
+
+@media (max-width: 768px) {
+    .options-grid {
+        flex-direction: column; /* Stack the options on smaller screens */
+    }
+
+    .subsection {
+        width: 100%; /* Full width for each subsection on small screens */
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+        flex: none; /* Disable flex grow */
+    }
+}
+
+
+
+.subsection:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.subsection img {
+    width: 250px; /* Adjust as needed */
+    height: 130px; /* Adjust as needed */
+    object-fit: cover; /* This will cover the area without stretching the image */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+.cv-container {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
+    height: 100vh; /* Make the container full height of the viewport */
+    padding: 0;
+}
+
+.cv-container img {
+    max-width: 40%; /* Each image takes up to 40% of the container width */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 0 2%; /* 2% margin on each side of the image */
+}
