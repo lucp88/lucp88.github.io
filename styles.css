@@ -148,7 +148,6 @@ header {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -230,6 +229,7 @@ header {
     flex-direction: row; /* Stack the study-abstracts vertically */
     justify-content: space-between; /* Spaces the children evenly */
     flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+    margin-bottom: 30px;
     gap: 10px; /* Optional: adds space between the columns */
 }
 
