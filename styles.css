@@ -34,8 +34,8 @@ header {
 
 .home-button img {
     display: block; /* Removes any inline spacing */
-    width: 110px; /* Sets the width of the image */
-    height: 110px; /* Sets the height of the image */
+    width: 80px; /* Sets the width of the image */
+    height: 80px; /* Sets the height of the image */
     object-fit: cover; /* Ensures the image covers the area */
     /* Adjust width and height as needed to fit your design */
 }
