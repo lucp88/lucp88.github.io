@@ -156,35 +156,42 @@ header {
 }
 
 
+/* CV Page */
 
+.header-container {
+    margin-right: 8%; 
+    margin-left: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0%; /* Adjust as needed */
+ 
+}
+
+/* Styles for your download button remain the same */
+.download-button {
+    padding: 10px 20px;
+    background-color: rgba(82, 76, 82, 0.631);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 .cv-container {
     display: flex;
     justify-content: center; /* Center the images horizontally */
     align-items: center; /* Center the images vertically */
-    height: 100vh; /* Make the container full height of the viewport */
-    padding: 0;
+    height: vh; /* Make the container full height of the viewport */
+    padding: 10;
 }
 
 .cv-container img {
     max-width: 40%; /* Each image takes up to 40% of the container width */
     height: auto; /* Maintain the aspect ratio */
-    margin: 0 2%; /* 2% margin on each side of the image */
-}
-
-
-.download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 0;
-    background-color: #4CAF50; /* or any color you prefer */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    margin: 20px 2%; /* 20px top margin, 2% margin on each side of the image */
 }
 
 .download-button:hover {
-    background-color: #45a049;
+    background-color: #3a403a;
 }
