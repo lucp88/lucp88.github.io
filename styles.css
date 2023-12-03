@@ -246,6 +246,20 @@ h1 {
     padding: 5px 0px; /* Adjust padding to fit your design */
 }
 
+.header-title-and-logo {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the items */
+}
+
+.philosophy-quote {
+    font-size: 6; /* Adjust the font size as needed */
+    font-style: italic; /* Makes the font italic */
+    text-align: right; /* Aligns the text to the right */
+    flex-grow: 1; /* Ensures it takes up the remaining space */
+    padding-left: 20px; /* Adds space between the title and the quote */
+}
+
+
 .introduction.container.PhD {
     display: flex; /* Enable Flexbox */
     justify-content: center; /* Center children horizontally */
