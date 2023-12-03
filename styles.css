@@ -58,7 +58,7 @@ h1 {
 
 /* Ensure the 'Hello!' text is styled appropriately */
 .introduction.container.home > h1 {
-    margin-bottom: -20px; /* this moves the text up and down!' */
+    margin-bottom: -5px; /* this moves the text up and down!' */
     font-size: 46px; /* Large font size for 'Hello!' */
 
 }
@@ -75,7 +75,7 @@ h1 {
     height: 300px;
     object-fit: cover;
     margin-right: 30px;
-    margin-top: 70px;
+    margin-top: 35px; /* this moves the image up and down!' */
     border-radius: 25px;
 }
 
@@ -84,25 +84,6 @@ h1 {
     text-align: justify;
     margin-top: 0;
 }
-
-
-/* Additional media query to handle responsiveness on smaller screens */
-@media (max-width: 768px) {
-    .introduction {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-image img {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .intro-text {
-        max-width: 100%;
-    }
-}
-
 
 
 .read-about-banner {
@@ -139,31 +120,6 @@ h1 {
 }
 
 
-@media (max-width: 1200px) {
-    .options-grid {
-        flex-wrap: wrap; /* Allow wrapping on medium screens */
-    }
-
-    .subsection {
-        /* Adjust the width for 2 items per row or full width as needed */
-        max-width: calc(50% - 20px);
-        flex: none; /* Disable flex grow */
-    }
-}
-
-@media (max-width: 768px) {
-    .options-grid {
-        flex-direction: column; /* Stack the options on smaller screens */
-    }
-
-    .subsection {
-        width: 100%; /* Full width for each subsection on small screens */
-        margin: 10px 0; /* Adjust margin for vertical stacking */
-        flex: none; /* Disable flex grow */
-    }
-}
-
-
 
 .subsection:hover {
     transform: translateY(-5px);
@@ -187,6 +143,34 @@ h1 {
     bottom: 0;
     width: 100%;
 }
+
+
+@media (max-width: 768px) {
+    .image-and-text {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .intro-image img {
+        margin-right: 0; /* Remove the right margin */
+        margin-bottom: 20px; /* Add some space between the image and the text */
+    }
+
+    .intro-text {
+        max-width: 100%; /* Allow the text to take the full width */
+    }
+
+    .options-grid {
+        flex-direction: column; /* Stack the options vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .subsection {
+        width: 100%; /* Allow each option to take full width */
+        margin: 10px 0; /* Add margin for vertical spacing */
+    }
+}
+
 
 
 /* CV Page */
@@ -227,6 +211,19 @@ h1 {
 
 .download-button:hover {
     background-color: #3a403a;
+}
+
+/* CV Page - Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images horizontally */
+    }
+
+    .cv-container img {
+        max-width: 80%; /* Adjust the width for smaller screens */
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+    }
 }
 
 
@@ -278,7 +275,7 @@ h1 {
     margin-top: 0;
 
     flex: 1; /* Each abstract will grow to fill the flex container equally */
-    height: 620px;
+    min-height: 620px;
 }
 
 .study-abstract h2,
@@ -320,9 +317,38 @@ h1 {
     margin-top: 10px;
 }
 
-/* Add responsive adjustments if needed */
 @media (max-width: 768px) {
+    .studies.container {
+        flex-direction: column; /* Stack the abstracts vertically on smaller screens */
+        height: auto; 
+    }
+
     .study-abstract {
         width: 100%; /* Each abstract takes full width on smaller screens */
+        height: auto; /* Allows the height to adjust based on content */
+        margin-bottom: 20px; /* Adds space between stacked abstracts */
+    }
+
+    .study-abstract h2,
+    .study-abstract h3,
+    .study-abstract .authors,
+    .study-abstract .institution,
+    .study-abstract h4,
+    .abstract-content {
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    /* Adjust the font sizes for smaller screens if necessary */
+    .study-abstract h3 {
+        font-size: 16px; /* Smaller font size for the title on smaller screens */
+    }
+
+    .authors,
+    .institution {
+        font-size: 10px; /* Smaller font size for the authors and institution */
+    }
+
+    .abstract-content {
+        font-size: 14px; /* Adjust the font size for the abstract content */
     }
 }
