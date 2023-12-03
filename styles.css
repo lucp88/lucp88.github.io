@@ -5,7 +5,7 @@ body {
     background: #f4f4f4;
 }
 
-.container {
+.header-container-home {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
     justify-content: flex-start; /* Spaces items evenly */
@@ -173,17 +173,19 @@ h1 {
 
 
 
-/* CV Page */
+/*=========== CV Page ============*/
 
-.header-container {
-    margin-right: 8%; 
-    margin-left: 8%;
-    display: flex;
-    justify-content: space-between;
+.header-container-CV {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the items */
+    justify-content: flex-start; /* Spaces items evenly */
     align-items: center;
-    padding: 0px 0%; /* Adjust as needed */
- 
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 5px 0px; /* Adjust padding to fit your design */
 }
+
 
 /* Styles for your download button remain the same */
 .download-button {
@@ -195,8 +197,13 @@ h1 {
     font-weight: bold;
 }
 
+.header-container-CV .download-button {
+    margin-left: auto; /* Pushes the download button to the right */
+}
+
 .cv-container {
     display: flex;
+    flex-direction: row; 
     justify-content: center; /* Center the images horizontally */
     align-items: center; /* Center the images vertically */
     height: vh; /* Make the container full height of the viewport */
@@ -214,7 +221,7 @@ h1 {
 }
 
 /* CV Page - Media Query for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .cv-container {
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center images horizontally */
@@ -227,16 +234,16 @@ h1 {
 }
 
 
-/* PhD Page */
-.header-container {
-    margin-right: 8%; 
-    margin-left: 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 0%; /* Adjust as needed */
-    margin-bottom: 0px;
- 
+/*============ PhD Page ===============*/
+
+.header-container-PhD {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between; /* Spaces items evenly */
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 5px 0px; /* Adjust padding to fit your design */
 }
 
 .introduction.container.PhD {
@@ -257,26 +264,28 @@ h1 {
 }
 
 .studies.container {
-    display: flex; /* Enables flexbox */
-    flex-direction: row; /* Stack the study-abstracts vertically */
-    justify-content: space-between; /* Spaces the children evenly */
-    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap; 
     margin-bottom: 30px;
-    gap: 10px; /* Optional: adds space between the columns */
+    gap: 20px; /* Adjust gap as needed */
+    padding-left: 10%; /* Add padding to prevent touching the window edges */
+    padding-right: 10%; /* Add padding to prevent touching the window edges */
 }
 
 .study-abstract {
-    background: #f8f8f8; /* Light gray background */
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px; /* Slightly rounded corners for the border */
-    padding: 20px; /* Padding inside the abstract boxes */
-    width: 48%; /* Sets the width to less than half the parent container, allowing for two columns */
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    margin-top: 0;
-
-    flex: 1; /* Each abstract will grow to fill the flex container equally */
-    min-height: 620px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px; /* Adjust padding as needed */
+    width: calc(50% - 20px); /* Adjust width for two columns, accounting for the gap */
+    box-sizing: border-box;
+    min-height: 650px; /* Adjust minimum height as needed */
+    height: auto;
 }
+
 
 .study-abstract h2,
 .study-abstract h3,
@@ -317,7 +326,7 @@ h1 {
     margin-top: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .studies.container {
         flex-direction: column; /* Stack the abstracts vertically on smaller screens */
         height: auto; 
@@ -327,6 +336,8 @@ h1 {
         width: 100%; /* Each abstract takes full width on smaller screens */
         height: auto; /* Allows the height to adjust based on content */
         margin-bottom: 20px; /* Adds space between stacked abstracts */
+        min-height: 0px; /* change this to edit min heigh of the box it should be more than the longest text needs */
+        height: auto;
     }
 
     .study-abstract h2,
