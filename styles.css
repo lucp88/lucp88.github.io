@@ -29,8 +29,10 @@ header {
     overflow: hidden; /* Ensures nothing spills outside the circle */
     line-height: 0; /* Removes any extra line-height space around the image */
     border: 2px solid black; 
-    height: auto; /* Adjust as needed, or set a fixed height */
-    width: auto; /* Adjust as needed, or set a fixed width */
+    height: 5vw; /* Adjust as needed, or set a fixed height */
+    width: 5wv; /* Adjust as needed, or set a fixed width */
+    min-width: 80px; /* Minimum width to prevent the logo from getting too small */
+    min-height: 80px; /* Minimum height to match the minimum width */
 }
 
 .home-button img {
@@ -39,6 +41,8 @@ header {
     height: 80px; /* Sets the height of the image */
     object-fit: cover; /* Ensures the image covers the area */
     /* Adjust width and height as needed to fit your design */
+    width: 100%; /* Ensure the image covers the entire button area */
+    height: 100%; /* Match the height to the container */
 }
 
 h1 {
@@ -239,6 +243,14 @@ h1 {
     }
 }
 
+/* Media Query for extremely small screens */
+@media (max-width: 480px) {
+    .home-button {
+        width: 10vw; /* Slightly larger size for very small screens */
+        height: 10vw; /* Maintain aspect ratio */
+    }
+    /* Adjust font size or other properties for other elements as necessary */
+}
 
 /*============ PhD Page ===============*/
 
@@ -299,12 +311,15 @@ h1 {
     background: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 20px; /* Adjust padding as needed */
+    padding: 20px;
     width: calc(50% - 20px); /* Adjust width for two columns, accounting for the gap */
     box-sizing: border-box;
-    min-height: 650px; /* Adjust minimum height as needed */
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the poster to the bottom */
+    min-height: 1600px; /* Adjust minimum height as needed */
 }
+
 
 
 .study-abstract h2,
@@ -346,19 +361,27 @@ h1 {
     margin-top: 10px;
 }
 
-.pdf-container {
-    cursor: pointer; /* Changes the cursor to indicate it's clickable */
-    margin: 20px 0; /* Adds some space around the PDFs */
+/* Posters */
+.poster-container {
+    text-align: center;
+    margin-top: auto; /* This will align the poster to the bottom of the container */
 }
 
-.pdf-container object {
-    width: 100%; /* Adjust width as necessary */
-    height: 600px; /* Adjust height as necessary */
-    border: 1px solid #ddd; /* Optional: adds a border around the PDF */
+.poster-container img {
+    max-width: 100%;
+    height: auto;
 }
 
 
 @media (max-width: 1200px) {
+    .header-container-PhD {
+        padding: 5px 0; /* Reduced padding for smaller screens */
+    }
+   
+    .philosophy-quote {
+        /* Adjust styles as needed for smaller screens */
+        font-size: 16px; /* Example adjustment */
+    }
     .studies.container {
         flex-direction: column; /* Stack the abstracts vertically on smaller screens */
         height: auto; 
@@ -372,14 +395,15 @@ h1 {
         height: auto;
     }
 
+     /* 
     .study-abstract h2,
     .study-abstract h3,
     .study-abstract .authors,
     .study-abstract .institution,
     .study-abstract h4,
     .abstract-content {
-        text-align: left; /* Align text to the left for better readability */
-    }
+        text-align: left; 
+    }*/
 
     /* Adjust the font sizes for smaller screens if necessary */
     .study-abstract h3 {
@@ -394,5 +418,7 @@ h1 {
     .abstract-content {
         font-size: 14px; /* Adjust the font size for the abstract content */
     }
+
+
 }
 
