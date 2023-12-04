@@ -37,8 +37,7 @@ header {
 
 .home-button img {
     display: block; /* Removes any inline spacing */
-    width: 80px; /* Sets the width of the image */
-    height: 80px; /* Sets the height of the image */
+
     object-fit: cover; /* Ensures the image covers the area */
     /* Adjust width and height as needed to fit your design */
     width: 100%; /* Ensure the image covers the entire button area */
@@ -137,6 +136,7 @@ h1 {
     margin-bottom: 5px; /* Space below the image */
     border-radius: 15px;
 }
+
 
 
 .footer {
