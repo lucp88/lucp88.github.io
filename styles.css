@@ -130,7 +130,7 @@ h1 {
 }
 
 .subsection img {
-    width: 250px; /* Adjust as needed */
+    width: 240px; /* Adjust as needed */
     height: 150px; /* Adjust as needed */
     object-fit: cover; /* This will cover the area without stretching the image */
     margin-bottom: 5px; /* Space below the image */
