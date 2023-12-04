@@ -125,14 +125,20 @@ h1 {
     /* Keep your other styles (background, padding, box-shadow, etc.) */
 }
 
-
-
 .subsection:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .subsection img {
+    width: 250px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    object-fit: cover; /* This will cover the area without stretching the image */
+    margin-bottom: 5px; /* Space below the image */
+    border-radius: 15px;
+}
+
+.subsection.prepNFB-image img {
     width: 250px; /* Adjust as needed */
     height: 150px; /* Adjust as needed */
     object-fit: cover; /* This will cover the area without stretching the image */
