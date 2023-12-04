@@ -440,3 +440,30 @@ h1 {
 
 }
 
+/*=========== prepNFB ============*/
+
+.header-container-prepNFB {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between; /* Spaces items evenly */
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 5px 0px; /* Adjust padding to fit your design */
+}
+
+
+.video-container {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Center the iframe horizontally */
+    align-items: center; /* Center the iframe vertically */
+    max-width: 700px; /* Adjust to desired maximum width */
+    margin: 20px auto; /* Centers the container with auto margins */
+
+}
+
+.video-container iframe {
+    width: 100%; /* The iframe takes the full width of its container */
+    height: 400px; /* Adjust height as needed */
+    border: none; /* Optional: Removes the border around the iframe */
+}
