@@ -223,16 +223,19 @@ h1 {
     background-color: #3a403a;
 }
 
+
 /* CV Page - Media Query for Smaller Screens */
 @media (max-width: 1200px) {
     .cv-container {
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center images horizontally */
+        height: auto;
     }
 
     .cv-container img {
-        max-width: 80%; /* Adjust the width for smaller screens */
+        max-width: 95%; /* Adjust the width for smaller screens */
         margin: 10px 0; /* Adjust margin for vertical stacking */
+        height: auto;
     }
 }
 
@@ -343,6 +346,18 @@ h1 {
     margin-top: 10px;
 }
 
+.pdf-container {
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    margin: 20px 0; /* Adds some space around the PDFs */
+}
+
+.pdf-container object {
+    width: 100%; /* Adjust width as necessary */
+    height: 600px; /* Adjust height as necessary */
+    border: 1px solid #ddd; /* Optional: adds a border around the PDF */
+}
+
+
 @media (max-width: 1200px) {
     .studies.container {
         flex-direction: column; /* Stack the abstracts vertically on smaller screens */
@@ -380,3 +395,4 @@ h1 {
         font-size: 14px; /* Adjust the font size for the abstract content */
     }
 }
+
