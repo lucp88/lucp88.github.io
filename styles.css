@@ -30,7 +30,7 @@ header {
     line-height: 0; /* Removes any extra line-height space around the image */
     border: 2px solid black; 
     height: 5vw; /* Adjust as needed, or set a fixed height */
-    width: 5wv; /* Adjust as needed, or set a fixed width */
+    width: 5vw; /* Adjust as needed, or set a fixed width */
     min-width: 80px; /* Minimum width to prevent the logo from getting too small */
     min-height: 80px; /* Minimum height to match the minimum width */
 }
