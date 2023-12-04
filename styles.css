@@ -299,15 +299,12 @@ h1 {
 }
 
 .studies.container {
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center; /* Center the items horizontally */
-    align-items: flex-start;
-    flex-wrap: wrap; 
-    margin-bottom: 30px;
-    gap: 20px; /* Adjust gap as needed */
-    padding-left: 10%; /* Add padding to prevent touching the window edges */
-    padding-right: 10%; /* Add padding to prevent touching the window edges */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the items */
+    align-items: stretch; /* Stretch items to fill the container height */
+    padding: 0 10%; /* Add padding to prevent touching the window edges */
 }
 
 .study-abstract {
@@ -320,7 +317,6 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* This will push the poster to the bottom */
-    min-height: 1600px; /* Adjust minimum height as needed */
 }
 
 
@@ -364,16 +360,22 @@ h1 {
     margin-top: 10px;
 }
 
-/* Posters */
+
+.abstract-text-container {
+    text-align: center; /* Center the text */
+    /* Additional styles if needed */
+}
+
 .poster-container {
     text-align: center;
-    margin-top: auto; /* This will align the poster to the bottom of the container */
+    margin-top: auto; /* Push the poster to the bottom */
 }
 
 .poster-container img {
     max-width: 100%;
     height: auto;
 }
+
 
 
 @media (max-width: 1200px) {
@@ -421,6 +423,15 @@ h1 {
     .abstract-content {
         font-size: 14px; /* Adjust the font size for the abstract content */
     }
+    
+    .studies.container {
+        flex-direction: column; /* Stack the abstracts vertically on smaller screens */
+    }
+
+    .study-abstract {
+        width: 100%; /* Full width on smaller screens */
+    }
+
 
 
 }
