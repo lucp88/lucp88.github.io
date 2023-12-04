@@ -239,6 +239,11 @@ h1 {
         margin: 10px 0; /* Adjust margin for vertical stacking */
         height: auto;
     }
+
+    .home-button {
+        width: 10vw; /* Slightly larger size for very small screens */
+        height: 10vw; /* Maintain aspect ratio */
+    }
 }
 
 /* Media Query for extremely small screens */
