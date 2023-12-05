@@ -455,11 +455,12 @@ h1 {
 .introduction.container.prepNFB {
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    align-items: flex-start; /* Align children to the start (left) */
+    align-items: center; /* Align children to the center */
     text-align: left; /* Align text to the left */
     min-height: 48vh;
     width: 100%; /* Ensure the container takes the full width */
-    padding-left: 23%; /* Adjust the padding to match the left edge of the logo */
+    padding: 0; /* Removed left-padding to allow full width usage */
+    margin: auto; /* Center the container */
 }
 
 .intro-heading-prepNFB {
@@ -487,27 +488,28 @@ h1 {
 }
 
 
+
+
 .video-section {
-    max-width: 1000px; /* Adjust to desired maximum width */
-    margin: 20px auto; /* Centers the section with auto margins */
+    display: flex;
+    flex-direction: column; /* Stack the title and video container vertically */
+    align-items: center; /* Center the container */
+    width: 100%; /* Ensure the video section takes full width */
 }
 
 .video-title {
-    margin-bottom: 10px; /* Adjust as needed */
-    text-align: left; /* Aligns the title to the left */
-    margin-left: 20px;
-    margin-right: 20px;
+    align-self: flex-start; /* Aligns the title to the start of the flex container */
+    width: 1000px; /* Set the width of the title to match the video container */
+    padding-left: calc((100% - 1000px) / 2); /* Adjust the padding to align with the video container */
+    margin-bottom: 20px; /* Space between the title and the video */
 }
 
 .video-container {
-    display: flex; /* Enables Flexbox */
-    justify-content: center; /* Center the iframe horizontally */
-    align-items: center; /* Center the iframe vertically */
-    max-width: 1000px; /* Adjust to desired maximum width */
-    margin: 20px auto; /* Centers the container with auto margins */
-    margin-left: 20px;
-    margin-right: 20px;
-
+    max-width: 1000px; /* Set the maximum width of the video container */
+    width: 100%; /* Ensure it takes up available space up to max-width */
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Use flex to center children */
+    justify-content: center; /* Center children horizontally */
 }
 
 .video-container iframe {
