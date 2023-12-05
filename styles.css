@@ -452,48 +452,51 @@ h1 {
     padding: 5px 0px; /* Adjust padding to fit your design */
 }
 
-
 .introduction.container.prepNFB {
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    text-align: center; /* Center text for all children */
+    align-items: flex-start; /* Align children to the start (left) */
+    text-align: left; /* Align text to the left */
     min-height: 48vh;
+    width: 100%; /* Ensure the container takes the full width */
+    padding-left: 23%; /* Adjust the padding to match the left edge of the logo */
 }
 
-
-/* Ensure the 'prepNFB' text is styled appropriately */
-.introduction.container.prepNFB > h1 {
-    align-self: flex-start; /* Aligns to the left within the flex container */
-    margin-left: 380px; /* Adjust this to align with the logo's left edge */
-    margin-bottom: -25px; /* Adjust as needed */
-    margin-top: 50px; /* Adjust as needed */
+.intro-heading-prepNFB {
     font-size: 46px; /* Large font size for 'prepNFB' */
-
+    margin-bottom: 20px; /* Space between the title and the image */
 }
 
 .image-and-text-prepNFB {
     display: flex; /* Enable Flexbox for this container */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-
+    justify-content: flex-start; /* Start alignment horizontally */
 }
 
 .intro-image-prepNFB img {
-    width: 300px;
-    height: 300px;
+    width: 300px; /* Fixed width of the logo */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
-    margin-right: 30px;
-    margin-top: -140px; /* this moves the image up and down!' */
     border-radius: 25px;
 }
 
 .intro-text-prepNFB {
-    max-width: 600px;
+    max-width: 600px; /* Maximum width of the text container */
     text-align: justify;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 30px; /* Increase this value to push the text further down */
+    padding-left: 30px; /* Left padding to push the text next to the logo */
+    margin-top: 0;
+}
+
+
+.video-section {
+    max-width: 1000px; /* Adjust to desired maximum width */
+    margin: 20px auto; /* Centers the section with auto margins */
+}
+
+.video-title {
+    margin-bottom: 10px; /* Adjust as needed */
+    text-align: left; /* Aligns the title to the left */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .video-container {
@@ -502,6 +505,8 @@ h1 {
     align-items: center; /* Center the iframe vertically */
     max-width: 1000px; /* Adjust to desired maximum width */
     margin: 20px auto; /* Centers the container with auto margins */
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 
