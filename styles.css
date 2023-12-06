@@ -185,10 +185,11 @@ h1 {
 
 .contact-info {
     border: 1px solid #dcdcdc; /* Light grey border */
-    background-color: #e2919188; /* White background */
+    background-color: #e8dede; /* White background */
     padding: 15px; /* Padding inside the card */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     border: 1px solid black; /* Fine black border */
+    border-radius: 20px;
 }
 
 
