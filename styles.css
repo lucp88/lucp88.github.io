@@ -8,11 +8,16 @@ body {
 .header-container-home {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
-    justify-content: flex-start; /* Spaces items evenly */
+    justify-content: space-between; /* Space out the elements */
     width: 80%;
     margin: auto;
     overflow: hidden;
     padding: 5px 0px; /* Adjust padding to fit your design */
+}
+
+.home-and-title {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center the items */
 }
 
 header {
@@ -182,8 +187,8 @@ h1 {
     border: 1px solid #dcdcdc; /* Light grey border */
     background-color: #e2919188; /* White background */
     padding: 15px; /* Padding inside the card */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    /* Remove margin-left and margin-right as it's centered by .contact-section */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    border: 1px solid black; /* Fine black border */
 }
 
 
@@ -201,15 +206,15 @@ h1 {
 
 .email-icon {
     vertical-align: middle; /* Align the icon with the text */
-    width: 30px; /* Set the icon size */
-    height: 30px; /* Maintain the aspect ratio */
+    width: 35px; /* Set the icon size */
+    height: 35px; /* Maintain the aspect ratio */
     margin-right: 5px; /* Space between the icon and the email address */
     border-radius: 5px;
 }
 
 .phone-icon {
     vertical-align: middle; /* Align the icon with the text */
-    width: 30px; /* Set the icon size */
+    width: 35px; /* Set the icon size */
     height: auto; /* Maintain the aspect ratio */
     margin-right: 5px; /* Space between the icon and the phone number */
     border-radius: 5px;
@@ -217,8 +222,8 @@ h1 {
 
 .linkedin-icon {
     vertical-align: middle; /* Align the icon with the text */
-    width: 30px; /* Set the icon size */
-    height: 30px; /* Maintain the aspect ratio */
+    width: 35px; /* Set the icon size */
+    height: 35px; /* Maintain the aspect ratio */
     margin-right: 5px; /* Space between the icon and the phone number */
     border-radius: 5px;
 }
@@ -229,7 +234,8 @@ h1 {
 }
 
 .contact-info a:hover img {
-    opacity: 0.8; /* Change the logo appearance on hover */
+    opacity: 0.6; /* Change the logo appearance on hover */
+
 }
 
 .footer {
@@ -258,15 +264,15 @@ h1 {
 
     .header-container-home h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
-        margin-bottom: 5px; /* Space below the h1 element */
+        margin-bottom: 0px; /* Space below the h1 element */
     }
 
     .header-container-home .contact-button {
-        margin-top: 5px; /* Space between elements */
+        margin-top: 0px; /* Space between elements */
     }
 
     .header-container-home .contact-button {
-        margin-left: 0; /* Reset left margin */
+        margin-left: 55px; /* Reset left margin */
     }
 
 
