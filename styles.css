@@ -181,6 +181,25 @@ h1 {
 }
 
 
+.contact-section {
+    text-align: center; /* Center the content */
+    padding: 20px; /* Add some padding */
+    background-color: #f2f2f2; /* Light background color for the section */
+    margin-top: 20px; /* Space above the section */
+}
+
+.contact-info p {
+    font-size: 16px; /* Set font size */
+    color: #333; /* Text color */
+    margin: 10px 0; /* Margin for each line */
+}
+
+.contact-info a {
+    color: #0066cc; /* Color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+
 
 /*=========== CV Page ============*/
 
