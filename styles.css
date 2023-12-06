@@ -49,6 +49,24 @@ h1 {
     /* Rest of your styles */
 }
 
+.contact-button {
+    padding: 10px 20px;
+    background-color: rgba(82, 76, 82, 0.631);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-button:hover {
+    background-color: #3a403a;
+}
+
+
+.header-container-home .contact-button {
+    margin-left: auto; /* Pushes the download button to the right */
+}
+
 .introduction.container.home {
     display: flex;
     text-align: center;
@@ -149,14 +167,13 @@ h1 {
     padding: 0px;
     background-color: #f2f2f2;
     margin: 20px auto; /* Top, bottom, and horizontal auto margin for centering */
-    max-width: 280px; /* Adjust to your desired maximum width */
+    max-width: 260px; /* Adjust to your desired maximum width */
     width: 100%; /* Ensures it takes the available space up to max-width */
 }
 
 .contact-section h2 {
     text-align: center; /* Align text to the left */
     margin-bottom: 5px;
-    /* Other existing styles... */
 }
 
 .contact-info {
