@@ -446,31 +446,37 @@ h1 {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
     justify-content: space-between; /* Spaces items evenly */
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
     padding: 5px 0px; /* Adjust padding to fit your design */
 }
 
 .introduction.container.prepNFB {
+    text-align: left;
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Align children to the center */
-    text-align: left; /* Align text to the left */
-    min-height: 48vh;
     width: 100%; /* Ensure the container takes the full width */
-    padding: 0; /* Removed left-padding to allow full width usage */
-    margin: auto; /* Center the container */
+
+    
 }
 
 .intro-heading-prepNFB {
+
     font-size: 46px; /* Large font size for 'prepNFB' */
-    margin-bottom: 20px; /* Space between the title and the image */
+    margin-bottom: 10px; /* Space between the title and the image */
+    margin-left: 20px; /* Adjust this if your logo has padding */
+    margin-right: 20px; /* Adjust this if your logo has padding */
+
 }
 
+
 .image-and-text-prepNFB {
-    display: flex; /* Enable Flexbox for this container */
-    justify-content: flex-start; /* Start alignment horizontally */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: flex-start; /* Align items to the start of the flex container */
+    padding: 5px 20px;
 }
 
 .intro-image-prepNFB img {
@@ -478,42 +484,98 @@ h1 {
     height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 25px;
+    margin-left: 20px; /* Adjust this if your logo has padding */
+    margin-right: 20px; /* Adjust this if your logo has padding */
+
 }
 
 .intro-text-prepNFB {
     max-width: 600px; /* Maximum width of the text container */
     text-align: justify;
-    padding-left: 30px; /* Left padding to push the text next to the logo */
-    margin-top: 0;
+    padding-left: 20px; /* Left padding to push the text next to the logo */
+    margin-top: 9%;
 }
-
 
 
 
 .video-section {
+    text-align: left;
     display: flex;
     flex-direction: column; /* Stack the title and video container vertically */
     align-items: center; /* Center the container */
-    width: 100%; /* Ensure the video section takes full width */
+    width: auto; /* Ensure the video section takes full width */
+    margin-bottom: 20px;
 }
 
 .video-title {
     align-self: flex-start; /* Aligns the title to the start of the flex container */
-    width: 1000px; /* Set the width of the title to match the video container */
-    padding-left: calc((100% - 1000px) / 2); /* Adjust the padding to align with the video container */
+    width: auto; /* Set the width of the title to match the video container */
+    padding-left: 20%; /* Adjust the padding to align with the video container */
     margin-bottom: 20px; /* Space between the title and the video */
 }
 
 .video-container {
-    max-width: 1000px; /* Set the maximum width of the video container */
+    position: relative; /* Set position relative for absolute positioning of iframe */
+    max-width: 60%; /* Set the maximum width of the video container */
     width: 100%; /* Ensure it takes up available space up to max-width */
     margin: 0 auto; /* Center the container */
-    display: flex; /* Use flex to center children */
-    justify-content: center; /* Center children horizontally */
+    padding-top: 33.75%; /* Top padding to maintain aspect ratio (9/16 * 100%) */
+    height: 0; /* Collapse the div and let padding control the height */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .video-container iframe {
-    width: 100%; /* The iframe takes the full width of its container */
-    height: 600px; /* Adjust height as needed */
+    position: absolute; /* Absolute positioning inside the relative container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretch to the full width of the container */
+    height: 100%; /* Stretch to the full height of the container */
     border: none; /* Optional: Removes the border around the iframe */
 }
+
+
+
+@media (max-width: 1200px) {
+    .header-container-prepNFB {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .image-and-text-prepNFB {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-heading-prepNFB {
+        text-align: center;
+    }
+
+    .intro-image-prepNFB img {
+        margin-bottom: 20px; /* Add space between the image and text */
+    }
+
+    .intro-text-prepNFB {
+        max-width: 80%; /* Allow text to take full width */
+        padding-left: 0; /* Remove left padding */
+        margin-top: 0; /* Adjust top margin as needed */
+        text-align: justify; /* Center align the text */
+    }
+
+    .video-title {
+        width: 100%; /* Allow title to take full width */
+        padding-left: 20px; /* Add padding to the left */
+        padding-right: 20px; /* Add padding to the right */
+        text-align: left; /* Center align the title */
+    }
+
+    .video-container {
+        box-sizing: border-box; 
+        max-width: calc(100% - 40px); /* Adjust max-width to include padding */
+        padding-top: 56.25%;
+    }
+    
+}
+
+
