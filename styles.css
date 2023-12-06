@@ -540,8 +540,6 @@ h1 {
 
 
 @media (max-width: 1200px) {
-
-
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
@@ -563,10 +561,13 @@ h1 {
     }
     
     .video-title {
-        padding-left: 20%; /* Adjust the padding to align with the video container */
+        padding-left: 10%; /* Adjust the padding to align with the video container */
     }
 
-
+    .video-container {
+        max-width: 80%; /* Increase max width */
+        padding-top: 45%; /* Adjust padding-top to maintain aspect ratio */
+    }
 
 }
 
