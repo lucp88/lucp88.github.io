@@ -268,11 +268,11 @@ h1 {
     }
 
     .header-container-home .contact-button {
-        margin-top: 0px; /* Space between elements */
+        margin-top: 10px; /* Space between elements */
     }
 
     .header-container-home .contact-button {
-        margin-left: 55px; /* Reset left margin */
+        margin-left: 40px; /* Reset left margin */
     }
 
 
