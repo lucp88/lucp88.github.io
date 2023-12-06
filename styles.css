@@ -95,7 +95,8 @@ h1 {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    margin-right: 30px;
+    margin-right: 20px;
+    margin-left: 30px;
     margin-top: 35px; /* this moves the image up and down!' */
     border-radius: 25px;
 }
@@ -158,6 +159,7 @@ h1 {
 /* Adjusts the focus area of the prepNFB image*/ 
 .subsection.prepNFB-image img {
     object-position: center 40%; 
+    
 }
 
 
@@ -246,6 +248,27 @@ h1 {
         flex-direction: column; /* Stack image and text vertically */
         align-items: center; /* Center items horizontally */
     }
+
+
+    .header-container-home {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally */
+        padding-bottom: 10px; /* Add padding to the bottom */
+    }
+
+    .header-container-home h1 {
+        margin-top: 5px; /* Reduced space above the h1 element */
+        margin-bottom: 5px; /* Space below the h1 element */
+    }
+
+    .header-container-home .contact-button {
+        margin-top: 5px; /* Space between elements */
+    }
+
+    .header-container-home .contact-button {
+        margin-left: 0; /* Reset left margin */
+    }
+
 
     .intro-image img {
         margin-right: 0; /* Remove the right margin */
