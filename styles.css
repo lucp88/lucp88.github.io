@@ -725,6 +725,31 @@ h1 {
 }
 
 
+.introduction-container-research {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    min-height: 20vh;
+}
+
+.intro-heading-research {
+    margin-bottom: 5px; /* Adjusts the space below the title */
+    margin-top: 30px; /* Adjusts the space below the title */
+    font-size: 40px; /* Large font size for the title */
+    text-align: center; /* Center the title */
+}
+
+.research-description {
+    max-width: 600px;
+    text-align: justify;
+    margin: auto; /* Centers the text block on the screen */
+    padding: 15px 15px;
+}
+
+
+
+/*=========== Projects, Publications, Presentations ======== */
+
 .research-content {
     width: 60%;
     margin: auto;
