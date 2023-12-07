@@ -72,6 +72,10 @@ h1 {
     background-color: #3a403a;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 .header-container-home .contact-button {
     margin-left: auto; /* Pushes the download button to the right */
@@ -851,11 +855,4 @@ h1 {
         width: 95%;
     }
     
-    .research-section {
-        .research-content {
-            width: 90%;
-            margin: auto;
-            padding-top: 20px;
-        }
-    }
 }
