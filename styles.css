@@ -845,13 +845,17 @@ h1 {
 
 
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .header-container-research,
     .research-content {
         width: 95%;
     }
-
+    
     .research-section {
-        /* Adjust padding or other properties as needed */
+        .research-content {
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
     }
 }
