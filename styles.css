@@ -146,6 +146,7 @@ h1 {
     margin: auto; /* Center the grid in the section */
 }
 
+
 .subsection {
     flex: 1; /* Allow the items to grow and take up equal space */
     margin: 0px; /* Adjust the margin as needed */
@@ -157,6 +158,7 @@ h1 {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
 
 .subsection img {
     width: 240px; /* Adjust as needed */
