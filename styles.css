@@ -931,7 +931,7 @@ html {
 /* Responsive design for smaller screens */
 @media (max-width: 1200px) {
     .header-container-research,
-    .introduction-container-research,
+    .research-description,
     .research-content {
         width: 95%;
     }
