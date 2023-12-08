@@ -974,8 +974,8 @@ html {
         width: 95%;
     }
 
-    .research-content {
-        max-width: auto;
+    .research-description {
+        max-width: 100%;
     }
     
 }
