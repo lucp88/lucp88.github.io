@@ -197,7 +197,9 @@ html {
 
     width: 100%; /* Take the full width of its container */
 
-    /* Add additional styling as needed */
+    max-height: 500px;
+    transition: max-height 0.7s ease,  opacity 0.3s ease;
+
 }
 
 #toggleButton {
