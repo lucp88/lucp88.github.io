@@ -871,6 +871,7 @@ html {
 
 /*=========== Projects, Publications, Presentations ======== */
 
+
 .research-content {
     width: 60%;
     margin: auto;
@@ -887,17 +888,7 @@ html {
 }
 
 /* For the main title to align with the content */
-.header-container-research {
-    width: 80%;
-    margin: auto;
-}
 
-/* For the main title to align with the content */
-.research-description {
-
-    width: 100%;
-    margin: auto;
-}
 .section-title {
  
     margin-bottom: 5px;
@@ -971,12 +962,6 @@ html {
 /* Responsive design for smaller screens */
 @media (max-width: 1200px) {
     
-    .header-container-research {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items horizontally */
-        padding-bottom: 10px; /* Add padding to the bottom */
-        margin-top: 0px; /* Space between elements */
-    }
 
     .header-container-research h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
@@ -987,6 +972,10 @@ html {
     .research-description,
     .research-content {
         width: 95%;
+    }
+
+    .research-content {
+        max-width: auto;
     }
     
 }
