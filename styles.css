@@ -152,8 +152,11 @@ html {
 
 
 .subsection {
+    
+    border-radius: 15px;
+    
     flex: 1; /* Allow the items to grow and take up equal space */
-    margin: 0px; /* Adjust the margin as needed */
+    margin: 0px 0px; /* Adjust the margin as needed */
     padding: 20px;
     /* Keep your other styles (background, padding, box-shadow, etc.) */
 }
@@ -168,7 +171,6 @@ html {
     width: 240px; /* Adjust as needed */
     height: 155px; /* Adjust as needed */
     object-fit: cover; /* This will cover the area without stretching the image */
-    margin-bottom: 5px; /* Space below the image */
     border-radius: 15px;
 }
 
@@ -177,6 +179,68 @@ html {
     object-position: center 40%; 
     
 }
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* This will center the button horizontally */
+    align-items: center; /* This will center the button vertically, if needed */
+    margin-top: 0px;
+    margin-bottom: 5px;
+
+    /* Add additional styling as needed */
+}
+
+#toggleButton {
+    padding: 5px;
+    cursor: pointer;
+    justify-content: center;
+    /* Add additional styling to match your site */
+}
+/* Initial state */
+.hidden-category {
+    
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+   
+    transition: max-height 0.7s ease;
+}
+
+/* State when visible */
+.visible-category {
+    display: inline-block; /* This makes the link wrap around the image tightly */
+    
+    max-height: 500px;
+    padding: 25px;
+    margin-bottom: 20px; /* Space below the image */
+    border-radius: 15px;
+    
+    opacity: 1;
+    transition: max-height 0.7s ease,  opacity 0.3s ease;
+
+
+    overflow: hidden;
+
+    flex: 1; /* Allow the items to grow and take up equal space */
+}
+  
+.hidden-category img, 
+.visible-category img {
+    width: 240px; /* Adjust as needed */
+    height: 155px; /* Adjust as needed */
+    object-fit: cover; /* This will cover the area without stretching the image */
+
+    border-radius: 15px;
+
+}
+
+.visible-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
 
 
 .contact-section {
@@ -303,7 +367,8 @@ html {
     }
 
     .subsection {
-        width: 100%; /* Allow each option to take full width */
+        border-radius: 15px;
+        width: auto; /* Allow each option to take full width */
         margin: 10px 0; /* Add margin for vertical spacing */
     }
 }

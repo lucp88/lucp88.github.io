@@ -79,14 +79,23 @@
                     <p>Projects, Publications & Presentations</p>
                 </a>
             </div>
-            <div class="subsection">
-                <a href="me.html" style="text-decoration: none; color: inherit;">
-                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/me_icon.png" alt="Research Icon">
-                    <h3>Me</h3>
-                    <p>My Hobbies</p>
-                </a>
-            </div>
+        
+
         </div>
+
+              
+        <div class="button-container">
+            <button id="toggleButton">More</button>
+        </div> 
+        <div id="additionalCategory" class="hidden-category">
+            <a href="me.html" style="text-decoration: none; color: inherit;">
+                <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/me_icon.png" alt="Research Icon">
+                <h3>Me</h3>
+                <p>My Hobbies</p>
+            </a>
+        </div>
+
+
     </div>
     <!-- Contact Information Section Start -->
     <div class="contact-section" id="contact-info">
@@ -115,13 +124,26 @@
     <!-- Contact Information Section End -->
 
     <!-- Rest of your HTML structure -->
-
-
-
-    
-
     <div class="footer">
         <p>&copy; 2023 Lucas Peek. All rights reserved.</p>
     </div>
+
+
+    <script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var category = document.getElementById('additionalCategory');
+        if (category.classList.contains('hidden-category')) {
+            category.classList.remove('hidden-category');
+            category.classList.add('visible-category');
+            this.textContent = 'Less';
+        } else {
+            category.classList.remove('visible-category');
+            category.classList.add('hidden-category');
+            this.textContent = 'More';
+        }
+    });
+
+      </script>
+    
 </body>
 </html>
