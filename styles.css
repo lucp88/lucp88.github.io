@@ -1,3 +1,12 @@
+:root {
+    --font-size-normal: 18px;
+    --font-size-smaller: 22px;
+    --font-size-large: 24px;
+}
+
+
+
+
 body {
     font-family: Raleway, Verdana, sans-serif;
     margin: 0;
@@ -80,6 +89,34 @@ html {
 .header-container-home .contact-button {
     margin-left: auto; /* Pushes the download button to the right */
 }
+
+
+.breadcrumb {
+    text-align: center; /* Center the breadcrumb text */
+    background-color: none; /* Light grey background, adjust as needed */
+    font-size: 16px; /* Adjust font size as needed */
+
+    margin: 10px 0; /* Space above and below the breadcrumb */
+
+}
+
+.breadcrumb a {
+    color: #000000; /* Color for the link, adjust as needed */
+    text-decoration: none; /* Removes underline from link */
+
+}
+
+.breadcrumb span {
+    color: #0000007d; /* Color for the current page indicator, adjust as needed */
+
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+
 
 .introduction.container.home {
     display: flex;
@@ -678,15 +715,17 @@ html {
 
 /*=========== prepNFB ============*/
 
-.header-container-prepNFB {
+.header-container-prepNFB{
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
-    justify-content: space-between; /* Spaces items evenly */
-    width: 90%;
+    justify-content: flex-start; /* Spaces items evenly */
+    align-items: center;
+    width: 80%;
     margin: auto;
     overflow: hidden;
     padding: 5px 0px; /* Adjust padding to fit your design */
 }
+
 
 .introduction.container.prepNFB {
     text-align: left;
@@ -782,6 +821,8 @@ html {
         align-items: center; /* Center items horizontally */
         padding-bottom: 10px; /* Add padding to the bottom */
         margin-top: 0px; /* Space between elements */
+        width: 95%;
+
     }
 
     .header-container-prepNFB h1 {
@@ -789,8 +830,6 @@ html {
         margin-bottom: 0px; /* Space below the h1 element */
     }
 
-
-   
 
     .intro-heading-prepNFB {
         font-size: 33px; /* Large font size for 'prepNFB' */
@@ -831,6 +870,15 @@ html {
 
 }
 
+
+@media (max-width: 480px) {
+    .image-and-text-prepNFB {
+        flex-direction: column;
+        align-items: center;
+        font-size: 24px; /* Large font size for 'prepNFB' */
+
+    }
+}
 
 /* ============ my research ============== */
 
