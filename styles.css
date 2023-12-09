@@ -75,6 +75,8 @@ h1 {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+
 }
 
 .contact-button:hover {
@@ -644,6 +646,28 @@ html {
     height: auto;
 }
 
+.home-button-container {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically if needed */
+    padding: 20px 0; /* Adds vertical padding */
+    /* Additional styling as needed */
+}
+
+.home-button_2 {
+    padding: 10px 20px;
+    background-color: rgba(82, 76, 82, 0.631);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.home-button_2:hover {
+    background-color: #3a403a; /* Changes background color on hover */
+}
+
 
 
 @media (max-width: 1200px) {
@@ -664,9 +688,23 @@ html {
         /* Adjust styles as needed for smaller screens */
         font-size: 16px; /* Example adjustment */
     }
+
+
+    .intro-text-PhD {
+        max-width: 100%; 
+    }
+
+    .intro-text-PhD h1 {
+        margin-left: 0;
+    }
+
     .studies.container {
         flex-direction: column; /* Stack the abstracts vertically on smaller screens */
         height: auto; 
+        padding: 0 0%; /* Add padding to prevent touching the window edges */
+
+    
+
     }
 
     .study-abstract {
@@ -675,6 +713,8 @@ html {
         margin-bottom: 20px; /* Adds space between stacked abstracts */
         min-height: 0px; /* change this to edit min heigh of the box it should be more than the longest text needs */
         height: auto;
+
+        
     }
 
      /* 
@@ -701,15 +741,6 @@ html {
         font-size: 14px; /* Adjust the font size for the abstract content */
     }
     
-    .studies.container {
-        flex-direction: column; /* Stack the abstracts vertically on smaller screens */
-    }
-
-    .study-abstract {
-        width: 100%; /* Full width on smaller screens */
-    }
-
-
 
 }
 
