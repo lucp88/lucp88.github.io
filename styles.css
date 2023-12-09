@@ -845,7 +845,7 @@ html {
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
 
     .header-container-prepNFB {
         flex-direction: column; /* Stack elements vertically */
@@ -864,6 +864,8 @@ html {
 
     .intro-heading-prepNFB {
         font-size: 33px; /* Large font size for 'prepNFB' */
+        text-align: center;
+
     }
 
     .intro-image-prepNFB img {
@@ -873,10 +875,8 @@ html {
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
-    }
-
-    .intro-heading-prepNFB {
-        text-align: center;
+        padding: 10px 10px;
+        
     }
 
     .intro-image-prepNFB img {
@@ -884,19 +884,20 @@ html {
     }
 
     .intro-text-prepNFB {
-        max-width: 80%; /* Allow text to take full width */
+        max-width: 100%; /* Allow text to take full width */
         padding-left: 0; /* Remove left padding */
         margin-top: 0; /* Adjust top margin as needed */
         text-align: justify; /* Center align the text */
+        
     }
     
     .video-title {
-        padding-left: 10%; /* Adjust the padding to align with the video container */
+        padding-left: 1%; /* Adjust the padding to align with the video container */
     }
 
     .video-container {
-        max-width: 80%; /* Increase max width */
-        padding-top: 45%; /* Adjust padding-top to maintain aspect ratio */
+        max-width: 98%; /* Increase max width */
+        padding-top: 55%; /* Adjust padding-top to maintain aspect ratio */
     }
 
 }
@@ -909,6 +910,8 @@ html {
         font-size: 24px; /* Large font size for 'prepNFB' */
 
     }
+
+    
 }
 
 /* ============ my research ============== */
