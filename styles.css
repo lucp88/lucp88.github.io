@@ -902,7 +902,7 @@ html {
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
-        font-size: 22px; /* Large font size for 'prepNFB' */
+
 
     }
 
@@ -1073,19 +1073,59 @@ html {
     .header-container-research h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
         margin-bottom: 0px; /* Space below the h1 element */
-        font-size: 22px; 
+
     }
     
     .header-container-research,
-    .research-description,
     .research-content {
         width: 95%;
-        font-size: 22px; 
+
     }
 
     .research-description {
         max-width: 100%;
-        font-size: 20px; 
+ 
     }
     
+    .publication {
+        text-align: left;
+    }
 }
+
+
+
+/*=========== About me ======== */
+
+.header-container-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.header-container-me h1 {
+    margin-left: 10px;
+}
+
+.about-me-intro {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.hobbies-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.hobbies-gallery img, .hobbies-gallery video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
