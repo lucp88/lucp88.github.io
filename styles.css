@@ -904,7 +904,7 @@ html {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
