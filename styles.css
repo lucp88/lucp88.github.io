@@ -5,8 +5,6 @@
 }
 
 
-
-
 body {
     font-family: Raleway, Verdana, sans-serif;
     margin: 0;
@@ -804,7 +802,6 @@ html {
 }
 
 
-
 .video-section {
     text-align: left;
     display: flex;
@@ -819,7 +816,8 @@ html {
     align-self: flex-start;
     width: auto;
     padding-left: 20%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .video-container {
@@ -893,13 +891,13 @@ html {
 
     .video-container {
         max-width: 80%; /* Increase max width for medium screens */
-        padding-top: 45%; /* Adjust padding-top to maintain aspect ratio for medium screens */
+        padding-top: 0%; /* Adjust padding-top to maintain aspect ratio for medium screens */
     }
 
 }
 
 
-@media (max-width: 468px) {
+@media (max-width: 600px) {
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
@@ -922,7 +920,7 @@ html {
 
     .video-container {
         max-width: 98%; /* Increase max width */
-        padding-top: 55%; /* Adjust padding-top to maintain aspect ratio */
+        padding-top: 0%; /* Adjust padding-top to maintain aspect ratio */
     }
     
 }
