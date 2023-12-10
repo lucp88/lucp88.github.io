@@ -1071,14 +1071,14 @@ html {
     .header-container-research h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
         margin-bottom: 0px; /* Space below the h1 element */
-        font-size: 20px; 
+        font-size: 22px; 
     }
     
     .header-container-research,
     .research-description,
     .research-content {
         width: 95%;
-        font-size: 18px; 
+        font-size: 22px; 
     }
 
     .research-description {
