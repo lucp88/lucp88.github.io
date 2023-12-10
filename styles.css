@@ -792,6 +792,7 @@ html {
     border-radius: 25px;
     margin-left: 20px; /* Adjust this if your logo has padding */
     margin-right: 20px; /* Adjust this if your logo has padding */
+    
 
 }
 
@@ -845,7 +846,7 @@ html {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
     .header-container-prepNFB {
         flex-direction: column; /* Stack elements vertically */
@@ -884,7 +885,7 @@ html {
     }
 
     .intro-text-prepNFB {
-        max-width: 100%; /* Allow text to take full width */
+        max-width: 80%; /* Allow text to take full width */
         padding-left: 0; /* Remove left padding */
         margin-top: 0; /* Adjust top margin as needed */
         text-align: justify; /* Center align the text */
@@ -892,12 +893,12 @@ html {
     }
     
     .video-title {
-        padding-left: 1%; /* Adjust the padding to align with the video container */
+        padding-left: 10%; /* Adjust the padding to align with the video container */
     }
 
     .video-container {
-        max-width: 98%; /* Increase max width */
-        padding-top: 55%; /* Adjust padding-top to maintain aspect ratio */
+        max-width: 80%; /* Increase max width */
+        padding-top: 44.9%; /* Adjust padding-top to maintain aspect ratio */
     }
 
 }
@@ -907,10 +908,26 @@ html {
     .image-and-text-prepNFB {
         flex-direction: column;
         align-items: center;
-        font-size: 24px; /* Large font size for 'prepNFB' */
+        font-size: 22px; /* Large font size for 'prepNFB' */
 
     }
 
+    .intro-text-prepNFB {
+        max-width: 100%; /* Allow text to take full width */
+        padding-left: 0; /* Remove left padding */
+        margin-top: 0; /* Adjust top margin as needed */
+        text-align: justify; /* Center align the text */
+        
+    }
+
+    .video-title {
+        padding-left: 1%; /* Adjust the padding to align with the video container */
+    }
+
+    .video-container {
+        max-width: 98%; /* Increase max width */
+        padding-top: 55%; /* Adjust padding-top to maintain aspect ratio */
+    }
     
 }
 
