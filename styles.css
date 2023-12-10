@@ -782,7 +782,7 @@ html {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap */
     align-items: flex-start; /* Align items to the start of the flex container */
-    padding: 5px 20px;
+    padding: 0px 20px;
 }
 
 .intro-image-prepNFB img {
@@ -808,41 +808,36 @@ html {
 .video-section {
     text-align: left;
     display: flex;
-    flex-direction: column; /* Stack the title and video container vertically */
-    align-items: center; /* Center the container */
-    width: auto; /* Ensure the video section takes full width */
+    flex-direction: column;
+    align-items: center;
+    width: auto;
     height: auto;
     margin-bottom: 20px;
 }
 
 .video-title {
-    align-self: flex-start; /* Aligns the title to the start of the flex container */
-    width: auto; /* Set the width of the title to match the video container */
-    padding-left: 20%; /* Adjust the padding to align with the video container */
-    margin-bottom: 20px; /* Space between the title and the video */
+    align-self: flex-start;
+    width: auto;
+    padding-left: 20%;
+    margin-bottom: 20px;
 }
 
 .video-container {
-    box-sizing: border-box; 
-
-    position: relative; /* Set position relative for absolute positioning of iframe */
-    max-width: 60%; /* Set the maximum width of the video container */
-    width: 100%; /* Ensure it takes up available space up to max-width */
-    margin: 0 auto; /* Center the container */
-    padding-top: 33.75%; /* Top padding to maintain aspect ratio (9/16 * 100%) */
-    height: 0; /* Collapse the div and let padding control the height */
-    overflow: hidden; /* Hide any overflow */
+    box-sizing: border-box;
+    position: relative;
+    max-width: 60%;
+    width: 100%;
+    margin: 0 auto;
+    /* Remove padding-top as it's no longer needed for <video> */
+    height: auto; /* Set height to auto */
+    overflow: hidden;
 }
 
-.video-container iframe {
-
-    position: absolute; /* Absolute positioning inside the relative container */
-    top: 0;
-    left: 0;
+.video-container video {
     width: 100%; /* Stretch to the full width of the container */
-    height: 100%; /* Stretch to the full height of the container */
-    border: none; /* Optional: Removes the border around the iframe */
+    height: auto; /* Adjust height automatically */
 }
+
 
 
 
@@ -897,8 +892,8 @@ html {
     }
 
     .video-container {
-        max-width: 80%; /* Increase max width */
-        padding-top: 44.9%; /* Adjust padding-top to maintain aspect ratio */
+        max-width: 80%; /* Increase max width for medium screens */
+        padding-top: 45%; /* Adjust padding-top to maintain aspect ratio for medium screens */
     }
 
 }
@@ -919,6 +914,7 @@ html {
         text-align: justify; /* Center align the text */
         
     }
+
 
     .video-title {
         padding-left: 1%; /* Adjust the padding to align with the video container */
@@ -972,7 +968,7 @@ html {
 
 
 .research-content {
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding-top: 20px;
 }
@@ -984,6 +980,16 @@ html {
     padding: 20px;
     margin-bottom: 20px; /* Space between sections */
     text-align: justify;
+}
+
+.research-section h2 {
+    text-align: center;
+}
+
+.research-section h3 {
+    font-weight: bold; /* Makes the h3 text bold */
+    padding-bottom: 0px;
+    text-align: center;
 }
 
 /* For the main title to align with the content */
@@ -1015,6 +1021,7 @@ html {
 }
 
 .publication-description {
+    font-size: .9em;
     margin-top: 0px;
     margin-bottom: 0px;
 
@@ -1029,6 +1036,7 @@ html {
     color: #0066cc;
     text-decoration: none; /* Optional: if you want to remove the underline */
     font-weight: bold; /* Optional: if you want the link to be bold */
+    font-size: 0.85em;
 }
 
 .publication-link:hover {
@@ -1042,6 +1050,7 @@ html {
     width: 100%; /* Adjust width to be less than the container */
     margin: 20px auto; /* Center the line and add space above and below */
 }
+
 
 
 
@@ -1071,7 +1080,7 @@ html {
     .research-description,
     .research-content {
         width: 95%;
-        font-size: 20px; 
+        font-size: 18px; 
     }
 
     .research-description {
