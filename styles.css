@@ -694,6 +694,7 @@ html {
 
     .intro-text-PhD h1 {
         margin-left: 0;
+        text-align: left;
     }
 
     .studies.container {
