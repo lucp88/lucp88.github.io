@@ -699,7 +699,7 @@ html {
     max-width: 90%; /* Maximum width, adjust to match your text width */
     margin: 20px auto; /* Center the video in the container */
     padding-top: 56.25%; /* Aspect ratio padding (16:9 aspect ratio = 56.25%) */
-    max-height: 200px;
+
 }
 
 .video-wrapper iframe {
