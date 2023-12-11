@@ -555,8 +555,8 @@ html {
     }
    
     .header-container-CV {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items horizontally */
+  
+        align-items: left; /* Center items horizontally */
         padding-bottom: 10px; /* Add padding to the bottom */
     }
 
@@ -789,6 +789,12 @@ html {
     }
     
 
+}
+
+@media (max-width: 500px) {
+    .philosophy-quote {
+       display: none;
+    }
 }
 
 /*=========== prepNFB ============*/
@@ -1144,7 +1150,7 @@ html {
     margin: auto;
     overflow: hidden;
     padding: 5px 0px; /* Adjust padding to fit your design */
-    
+
 }
 
 
