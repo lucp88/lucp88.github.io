@@ -373,17 +373,17 @@ html {
 
 
 @media (max-width: 768px) {
+
+    .header-container-home {
+        align-items: left; /* Center items horizontally */
+        padding-bottom: 10px; /* Add padding to the bottom */
+    }
+
     .image-and-text {
         flex-direction: column; /* Stack image and text vertically */
         align-items: center; /* Center items horizontally */
     }
 
-
-    .header-container-home {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items horizontally */
-        padding-bottom: 10px; /* Add padding to the bottom */
-    }
 
     .header-container-home h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
@@ -444,19 +444,31 @@ html {
 }
 
 
+.download-CV {
+    display: flex;
+    justify-content: right; /* This centers the button horizontally */
+
+    width: 100%; /* This ensures the container takes the full width */
+    padding: 0;
+    
+}
+
 /* Styles for your download button remain the same */
 .download-button {
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: rgba(82, 76, 82, 0.631);
     color: white;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    margin-right: 8%;
 }
 
-.header-container-CV .download-button {
-    margin-left: auto; /* Pushes the download button to the right */
+.download-button:hover {
+    background-color: #3a403a;
 }
+
+
 
 .cv-container {
     display: flex;
@@ -471,10 +483,6 @@ html {
     max-width: 40%; /* Each image takes up to 40% of the container width */
     height: auto; /* Maintain the aspect ratio */
     margin: 20px 2%; /* 20px top margin, 2% margin on each side of the image */
-}
-
-.download-button:hover {
-    background-color: #3a403a;
 }
 
 
@@ -496,6 +504,12 @@ html {
         width: 10vw; /* Slightly larger size for very small screens */
         height: 10vw; /* Maintain aspect ratio */
     }
+
+/* Styles for your download button remain the same */
+.download-button {
+    margin-right: 2.5%;
+}
+
 }
 
 /* Media Query for extremely small screens */
@@ -745,11 +759,12 @@ html {
 
 /*=========== prepNFB ============*/
 
-.header-container-prepNFB{
+
+.header-container-prepNFB {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
-    justify-content: flex-start; /* Spaces items evenly */
-    align-items: center;
+    justify-content: space-between; /* Spaces items evenly */
+    align-items: left;
     width: 80%;
     margin: auto;
     overflow: hidden;
@@ -843,15 +858,6 @@ html {
 @media (max-width: 1200px) {
 
 
-    .header-container-prepNFB {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items horizontally */
-        padding-bottom: 10px; /* Add padding to the bottom */
-        margin-top: 0px; /* Space between elements */
-        width: 95%;
-
-    }
-
     .header-container-prepNFB h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
         margin-bottom: 0px; /* Space below the h1 element */
@@ -921,9 +927,7 @@ html {
     }
 
     .video-container {
-        max-width: 98%; /* Increase max width */
-        padding-top: 0%; /* Adjust padding-top to maintain aspect ratio */
-    }
+        max-width: 98%; /* Increase max width */    }
     
 }
 
