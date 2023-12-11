@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
+
 }
 
 .header-container-home {
@@ -187,7 +188,7 @@ html {
     justify-content: center;
     flex-wrap: wrap; /* Prevent the options from wrapping */
     gap: 0px; /* Adjust the space between grid items */
-    padding: 0px 0; /* Space above and below the grid */
+    padding: 10px 0; /* Space above and below the grid */
     max-width: 1200px; /* Maximum width of the grid */
     margin: auto; /* Center the grid in the section */
     
@@ -196,13 +197,32 @@ html {
 
 
 .subsection {
-    
+    flex: 0 0 auto; /* Override the default flex-grow, flex-shrink, and flex-basis values */
+    width: 240px; /* Fixed width for each subsection */
+    height: auto; /* Height can adjust based on content */
+    margin: 25px; /* Margin around each subsection */
+    padding: 0px; /* defines border of clickable surface */
     border-radius: 15px;
     
-    flex: 1; /* Allow the items to grow and take up equal space */
-    margin: 0px 0px; /* Adjust the margin as needed */
-    padding: 20px;
-    /* Keep your other styles (background, padding, box-shadow, etc.) */
+    margin-bottom: 25px;
+
+    position: relative; /* Set the position to relative for absolute positioning of children */
+}
+
+.subsection h3, .subsection p {
+    text-align: center; /* Center the text */
+    margin: 10px 0; /* Spacing above and below the text */
+}
+
+
+.subsection p {
+    position: relative; /* Position relative to the .subsection */
+    white-space: normal; /* Allow the text to wrap */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add an ellipsis if the text is too long */
+    width: 200px; /* Match the width with the image */
+    margin: auto; /* Center the paragraph */
+    padding-bottom: 10px;
 }
 
 .subsection:hover {
@@ -260,7 +280,7 @@ html {
     display: inline-block; /* This makes the link wrap around the image tightly */
     
     max-height: 500px;
-    padding: 25px;
+    padding: 0px;
     margin-bottom: 20px; /* Space below the image */
     border-radius: 15px;
     
@@ -271,6 +291,21 @@ html {
     overflow: hidden;
 
     flex: 1; /* Allow the items to grow and take up equal space */
+}
+
+.visible-category h3 {
+    margin: 10px;
+}
+
+.visible-category p {
+    position: relative; /* Position relative to the .subsection */
+    white-space: normal; /* Allow the text to wrap */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add an ellipsis if the text is too long */
+    width: 200px; /* Match the width with the image */
+    margin: auto; /* Center the paragraph */
+    padding-top: 0px;
+    padding-bottom: 10px;
 }
   
 .hidden-category img, 
@@ -685,8 +720,6 @@ html {
 @media (max-width: 1200px) {
 
     .header-container-PhD {
-
-        flex-direction: column; /* Stack elements vertically */
 
         padding-bottom: 10px; /* Add padding to the bottom */
         
@@ -1120,11 +1153,28 @@ html {
     align-items: center; /* Center children horizontally */
     min-height: 20vh;
 }
+
 .about-me-intro {
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
+    text-align: center; /* Center the text of the entire container */
+    display: flex;
+    flex-direction: column; /* Stack h1 and p vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add padding around the container */
 }
+
+.about-me-intro h1 {
+    margin-bottom: 10px; /* Add some space below the h1 */
+}
+
+.about-me-intro p {
+    text-align: justify; /* Justify the text for a neat, aligned look */
+    max-width: 600px; /* Maximum width of the paragraph */
+    width: 100%; /* Use full width up to the max-width */
+    padding: 10px; /* Padding inside the paragraph box */
+    margin-top: 0; /* Adjust top margin if needed */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
 
 .hobbies-gallery {
     display: grid;
@@ -1132,6 +1182,7 @@ html {
     gap: 20px;
     padding: 20px;
     justify-content: center;
+    width: 80%;
 }
 
 .hobbies-gallery figure {
