@@ -1298,6 +1298,19 @@ figcaption {
   }
 
 
+.video-container {
+    max-width: 100%;
+    height: 15%;
+
+}
+
+.video-container iframe {
+
+    width: 100%;
+    height: 100%;
+}
+
+
 /* Style for the modal/lightbox */
 .lightbox-modal {
     display: none; /* Hidden by default */
