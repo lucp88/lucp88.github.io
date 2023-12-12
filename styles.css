@@ -13,6 +13,10 @@ body {
 
 }
 
+/*========================================================== */
+/*======================== Home Page ========================= */
+/*========================================================== */
+
 .header-container-home {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the items */
@@ -464,8 +468,9 @@ html {
 }
 
 
-
-/*=========== CV Page ============*/
+/*========================================================== */
+/*======================== CV Page ========================= */
+/*========================================================== */
 
 .header-container-CV {
     display: flex; /* Enables flexbox */
@@ -572,7 +577,10 @@ html {
     /* Adjust font size or other properties for other elements as necessary */
 }
 
-/*============ PhD Page ===============*/
+
+/*========================================================== */
+/*===================== PhD Page =========================== */
+/*========================================================== */
 
 .header-container-PhD {
     display: flex; /* Enables flexbox */
@@ -860,8 +868,9 @@ html {
     }
 }
 
-/*=========== prepNFB ============*/
-
+/*========================================================== */
+/*======================= prepNFB ========================== */
+/*========================================================== */
 
 .header-container-prepNFB {
     display: flex; /* Enables flexbox */
@@ -920,34 +929,25 @@ html {
     margin-top: 9%;
 }
 
-
 .video-section {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
-    height: auto;
-    margin-bottom: 20px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+    margin-bottom: 20px; /* Space below the video section */
 }
 
 .video-title {
     align-self: flex-start;
-    width: auto;
     padding-left: 20%;
-    margin-bottom: 10px;
     font-weight: bold;
+    margin-bottom: 10px; /* Space below the title */
 }
 
 .video-container {
-    box-sizing: border-box;
-    position: relative;
-    max-width: 60%;
-    width: 100%;
-    margin: 0 auto;
-    /* Remove padding-top as it's no longer needed for <video> */
-    height: auto; /* Set height to auto */
-    overflow: hidden;
+    width: 60%; /* Width of the video container */
+    max-width: 800px; /* Maximum width of the video container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Padding on both sides */
 }
 
 .video-container video {
@@ -956,10 +956,7 @@ html {
 }
 
 
-
-
 @media (max-width: 1200px) {
-
 
     .header-container-prepNFB h1 {
         margin-top: 5px; /* Reduced space above the h1 element */
@@ -996,17 +993,15 @@ html {
         
     }
     
-    .video-title {
-        padding-left: 10%; /* Adjust the padding to align with the video container */
-    }
-
     .video-container {
-        max-width: 80%; /* Increase max width for medium screens */
-        padding-top: 0%; /* Adjust padding-top to maintain aspect ratio for medium screens */
+        width: 78%; /* Width of the video container */
+    
     }
+    
+
+ 
 
 }
-
 
 @media (max-width: 600px) {
     .image-and-text-prepNFB {
@@ -1024,17 +1019,20 @@ html {
         
     }
 
-
-    .video-title {
-        padding-left: 1%; /* Adjust the padding to align with the video container */
-    }
-
     .video-container {
-        max-width: 98%; /* Increase max width */    }
+        width: 98%; /* Width of the video container */
+        padding: 0 0px; /* Padding on both sides */
+    }
     
+    .video-title {
+        padding-left: 10px;
+
+    }
 }
 
-/* ============ my research ============== */
+/*========================================================== */
+/* ====================== my research ===================== */
+/*========================================================== */
 
 .header-container-research {
     display: flex; /* Enables flexbox */
@@ -1046,7 +1044,6 @@ html {
     overflow: hidden;
     padding: 5px 0px; /* Adjust padding to fit your design */
 }
-
 
 .introduction-container-research {
     display: flex;
@@ -1069,10 +1066,8 @@ html {
     padding: 15px 15px;
 }
 
-
-
 /*=========== Projects, Publications, Presentations ======== */
-
+/*========================================================== */
 
 .research-content {
     width: 50%;
@@ -1202,8 +1197,9 @@ html {
 }
 
 
-
-/*=========== About me ======== */
+/*========================================================== */
+/*===================== About me =========================== */
+/*========================================================== */
 
 .header-container-me {
     display: flex; /* Enables flexbox */
@@ -1307,7 +1303,6 @@ figcaption {
     vertical-align: middle;
     width: 100%;
 }
-
 
 
 .video-container {
