@@ -1418,9 +1418,14 @@ figcaption {
     
 }
 
-@media (max-width: 500px) {
-    .gallery-spacer {
-        height: 9vh;
-}
+    @media (max-width: 700px) {
+        .gallery-spacer {
+            height: 14vh;
+    }
+    }
 
-
+    @media (max-width: 500px) {
+        .gallery-spacer {
+            height: 9vh;
+        }
+    }
