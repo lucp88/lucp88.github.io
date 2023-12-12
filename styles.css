@@ -1416,7 +1416,7 @@ figcaption {
         height: 21vh;
     }
     
-}
+    }
 
     @media (max-width: 700px) {
         .gallery-spacer {
