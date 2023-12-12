@@ -1277,7 +1277,7 @@ html {
 }
 
 figcaption {
-    text-align: center;
+    text-align: left;
     padding: 5px;
     background-color: #f2f2f2;
     font-style: italic;
@@ -1291,12 +1291,23 @@ figcaption {
   }
   
   /* Create four equal columns that sits next to each other */
-  .column {
+.column {
     flex: 25%;
     max-width: 25%;
     padding: 0 10px;
     box-sizing: border-box; /* Include padding in the element's total width and height */
-  }
+ 
+}
+
+
+/* Additional styles for figures inside columns to ensure proper spacing */
+.column figure {
+
+    margin-top: 15px;
+    vertical-align: middle;
+    width: 100%;
+}
+
 
 
 .video-container {
@@ -1372,29 +1383,44 @@ figcaption {
 
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .column {
       flex: 50%;
       max-width: 50%;
     }
+
+    .gallery-spacer {
+        height: 9vh;
+    }
+
+    
   }
   
-@media (max-width: 768px) {
+@media (max-width: 804px) {
+    
+
     .hobbies-gallery {
         grid-template-columns: 1fr; /* One column on smaller screens */
     }
     .hobbies-gallery figure {
         grid-row-end: unset; /* Reset row ends for mobile view */
     }
+
+    .column { 
+        flex: 100%;
+        max-width: 100%;
+        /*padding-top: 100px; */
+       }
+
+       .gallery-spacer {
+        height: 21vh;
+    }
+    
 }
 
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-   .column { 
-         flex: 100%;
-         max-width: 100%;
-        }
-    }
-  
+@media (max-width: 500px) {
+    .gallery-spacer {
+        height: 9vh;
+}
 
 
