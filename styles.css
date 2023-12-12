@@ -696,8 +696,8 @@ html {
 .video-wrapper {
     position: relative;
     width: 78.7%; /* Full width to match the parent container */
-    max-width: 90%; /* Maximum width, adjust to match your text width */
-    margin: 20px auto; /* Center the video in the container */
+    max-width: 80%; /* Maximum width, adjust to match your text width */
+    margin: 5px auto; /* Center the video in the container */
     padding-top: 56.25%; /* Aspect ratio padding (16:9 aspect ratio = 56.25%) */
 
 }
@@ -708,6 +708,18 @@ html {
     left: 0;
     width: 100%;
     height: 79%;
+}
+
+.video-title-container {
+    max-width: 100%;
+    width: 53%;
+    text-align: left; /* Center the title */
+    margin-bottom: 0px; /* Space between the title and the video */
+    margin-top: 30px;
+}
+
+.video-title {
+    font-size: 24px; /* Adjust the font size as needed */
 }
 
 
@@ -820,13 +832,30 @@ html {
         height: 100%;
     }
 
-}
+    .video-title-container {
+        max-width: 100%; 
+        width: 100%;
 
+    }
+
+    .video-title {
+
+        font-size: 22px; /* Adjust the font size as needed */
+        margin-left: -9%;
+    }
+    
+
+}
 
 
 @media (max-width: 500px) {
     .philosophy-quote {
        display: none;
+    }
+
+    .video-title {
+        text-align: left;
+        margin-left: 0%;
     }
 }
 
@@ -1216,25 +1245,32 @@ html {
     margin-bottom: 20px; /* Space below the paragraph */
 }
 
-
+/*
 .hobbies-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(1500px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;
+    align-items: start;
     width: 80%;
+    margin: auto;
 }
+*/
+
 
 .hobbies-gallery figure {
-    margin: 0;
+    margin: 0px;
+    margin-bottom: 10px;
     padding: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
+    cursor: pointer;
 }
 
-.hobbies-gallery img, .hobbies-gallery video {
+
+.hobbies-gallery img, .hobbies-gallery video, .hobbies-gallery iframe {
     width: 100%;
     display: block;
 }
@@ -1247,3 +1283,101 @@ figcaption {
 }
 
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns horizontally */
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 10px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+
+
+/* Style for the modal/lightbox */
+.lightbox-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Style for the close button */
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Style for the modal content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px; /* Adjust as needed */
+}
+
+/* Add animation - zoom in the modal */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+/* Animation */
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Caption text */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  
+
+@media (max-width: 768px) {
+    .hobbies-gallery {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+    .hobbies-gallery figure {
+        grid-row-end: unset; /* Reset row ends for mobile view */
+    }
+}

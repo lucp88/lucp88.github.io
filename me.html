@@ -26,32 +26,101 @@
 
     <div class="about-me-intro">
         <h1>In a few words</h1>
-        <p>I love all things nature. Sports are my passion. Climbing, Cycling, Hiking.
-            There is beauty in climbing things. Hip-Hop is what I listen. I read fiction.
-            I get up early. I don't eat animals or what they produce.</p>
+        <p>I love all things nature. Sports are my passion with a focus Climbing, Cycling & Hiking.
+            I enjoy the resistence and discomfort of climbing things. I enjoy photography and I read fiction.
+            I get up early. I fast and I am vegan.
+
     </div>
 
+
+    
+
     <div class="hobbies-gallery">
-        
-        <figure>
-            <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/in_de_bergen.jpg" alt="Hiking in the mountains">
-            <figcaption>Hiking in the Mountains</figcaption>
+        <div class="row">
+            <div class="column">
+                <figure class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/in_de_bergen.jpg" alt="Hiking in the mountains">
+                    <figcaption>Hiking in the Mountains</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <video controls>
+                        <source src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/videos/red1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Boulder Route at Arkose, FR</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/closeUp_child.jpg" alt="Portrait of Poverty in Myanmar">
+                    <figcaption>Portrait of Poverty in Myanmar</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/de_bergen.jpg" alt="Mountain Views">
+                    <figcaption>Mountain Views</figcaption>
+                </figure>
+            </div>
+
+    <div class="column">
+        <figure class="gallery-item">
+            <iframe src="https://www.youtube.com/embed/6SnP8johOG4" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
         </figure>
-        <figure>
+        <figure class="gallery-item">
             <video controls>
-                <source src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/videos/red1.mp4" type="video/mp4">
+                <source src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/videos/black1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Boulder Route at Energiehaven, NL</figcaption>
+        </figure>
+        <figure class="gallery-item">
+            <iframe 
+                width="315" height="560"
+                src="https://youtube.com/embed/LweaXU12x0I" 
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                gyroscope; picture-in-picture;
+                web-share"
+                allowfullscreen>
+            </iframe>
+        </figure>
+    </div>
+    <div class="column">
+        <figure class="gallery-item">
+            <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/vissen.JPG" alt="Fisherman in Myanmar">
+            <figcaption>Fisherman in Myanmar</figcaption>
+        </figure>
+        <figure class="gallery-item">
+            <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/paardje.jpg" alt="Indonesia">
+            <figcaption>Indonesia</figcaption>
+        </figure>
+        <figure class="gallery-item">
+            <video controls>
+                <source src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/videos/red2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <figcaption>Boulder Route at Arkose, FR</figcaption>
         </figure>
-        <figure>
-            <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/closeUp_child.jpg" alt="Hiking in the mountains">
-            <figcaption>Portrait of Poverty in Myanmar</figcaption>
+        <figure class="gallery-item">
+            <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/boven_de_wolken.jpg" alt="Early morning in the Alps at 2300m">
+            <figcaption>Early morning in the Alps at 2300m</figcaption>
         </figure>
-        <figure>
+    </div>
+   
+
         <!-- Repeat for other images/videos -->
 
     </div>
+    
+    <!-- Modal/Lightbox for enlarged content -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="lightbox-image">
+        <div id="caption"></div>
+    </div>
+
 
     
 
@@ -62,5 +131,33 @@
     <div class="footer">
         <p>&copy; 2023 Lucas Peek. All rights reserved.</p>
     </div>
+
+    <script>
+        // Get the modal
+         var modal = document.getElementById("lightbox-modal");
+ 
+         // Get the image and insert it inside the modal
+         // This now selects the 'img' elements within any '.gallery-item' elements
+         var images = document.querySelectorAll(".gallery-item img");
+         var modalImg = document.getElementById("lightbox-image");
+         var captionText = document.getElementById("caption");
+ 
+         images.forEach(function(img) {
+             img.onclick = function() {
+                 modal.style.display = "block";
+                 modalImg.src = this.src;
+                 captionText.innerHTML = this.alt; // or this.nextElementSibling.textContent if the caption is not in the alt attribute
+             }
+         });
+ 
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close-modal")[0];
+ 
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+             modal.style.display = "none";
+         }
+ 
+     </script>
 </body>
 </html>
