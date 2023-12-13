@@ -405,10 +405,12 @@ html {
     color: white;
     text-align: center;
     padding: 10px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: relative; /* Make sure footer is in the normal document flow */
+    width: 100%; /* Take up all available width */
+    box-sizing: border-box; /* Include padding in the width */
+    margin: auto; /* Center the footer */
 }
+
 
 
 @media (max-width: 768px) {
@@ -1149,20 +1151,6 @@ html {
     margin: 20px auto; /* Center the line and add space above and below */
 }
 
-
-
-
-
-/* Ensure footer is at the bottom */
-.footer {
-    position: relative;
-    width: 100%;
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
-}
 
 
 /* Responsive design for smaller screens */
