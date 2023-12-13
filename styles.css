@@ -407,6 +407,7 @@ html {
     padding: 10px;
     position: relative; /* Make sure footer is in the normal document flow */
     width: 100%; /* Take up all available width */
+    max-width: 100%;
     box-sizing: border-box; /* Include padding in the width */
     margin: auto; /* Center the footer */
 }
