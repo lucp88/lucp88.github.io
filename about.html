@@ -134,9 +134,12 @@
                     <figcaption>Boulder Route at Energiehaven, NL</figcaption>
                 </figure>
                 <figure class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/breakfast.JPG" alt="Breakfast Time">
+                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/preview_breakfast.jpg" 
+                         alt="Breakfast Time"
+                         data-hd-src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/photos/breakfast.JPG">
                     <figcaption>Breakfast Time</figcaption>
                 </figure>
+                
 
 
             </div>
@@ -155,31 +158,30 @@
 
     <script>
         // Get the modal
-         var modal = document.getElementById("lightbox-modal");
- 
-         // Get the image and insert it inside the modal
-         // This now selects the 'img' elements within any '.gallery-item' elements
-         var images = document.querySelectorAll(".gallery-item img");
-         var modalImg = document.getElementById("lightbox-image");
-         var captionText = document.getElementById("caption");
- 
-         images.forEach(function(img) {
-             img.onclick = function() {
-                 modal.style.display = "block";
-                 modalImg.src = this.src;
-                 captionText.innerHTML = this.alt; // or this.nextElementSibling.textContent if the caption is not in the alt attribute
-             }
-         });
- 
-         // Get the <span> element that closes the modal
-         var span = document.getElementsByClassName("close-modal")[0];
- 
-         // When the user clicks on <span> (x), close the modal
-         span.onclick = function() {
-             modal.style.display = "none";
-         }
- 
-     </script>
+        var modal = document.getElementById("lightbox-modal");
+    
+        // Get the images and insert them inside the modal
+        var images = document.querySelectorAll(".gallery-item img");
+        var modalImg = document.getElementById("lightbox-image");
+        var captionText = document.getElementById("caption");
+    
+        images.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.getAttribute('data-hd-src'); // Use HD image URL
+                captionText.innerHTML = this.alt; // Use the alt text as caption
+            }
+        });
+    
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-modal")[0];
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+    
 
     <div class="home-button-container">
         <a href="index.html" class="home-button_2">Home</a>
