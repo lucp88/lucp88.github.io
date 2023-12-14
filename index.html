@@ -111,25 +111,29 @@
     </div>
     <!-- Contact Information Section Start -->
     <div class="contact-section" id="contact-info">
-        <h2>Contact</h2>
+        <h2>Get in touch by</h2>
         <div class="contact-info">
             <p class="email-link">
                 <a href="mailto:lucas.peek@unige.ch">
                     <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/email.png" alt="Email" class="email-icon">
-                    Send me an Email
+                    Email
                 </a>
             </p>
             
             
             <p>
-                <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/phono_icon3.png" alt="Phone" class="phone-icon">
-                +41 22 37 99311
+                <a href="tel:+41223799311" id="phoneLink">
+                    <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/phono_icon3.png" alt="" class="phone-icon">
+                    Phone
+                </a>
+                <span id="phoneNumber" style="display: none;">= +41 22 37 99311</span>
             </p>
+            
             
             <p>
                 <a href="https://www.linkedin.com/in/lucas-peek-phd-17259510a/" target="_blank">
                     <img src="https://raw.githubusercontent.com/lucp88/lucp88.github.io/main/images/linkedIn2.png" alt="LinkedIn" class="linkedin-icon">
-                    Visit my LinkedIn
+                    LinkedIn
                 </a>
             </p>
             
@@ -145,20 +149,40 @@
 
 
     <script>
-    document.getElementById('toggleButton').addEventListener('click', function() {
-        var category = document.getElementById('additionalCategory');
-        if (category.classList.contains('hidden-category')) {
-            category.classList.remove('hidden-category');
-            category.classList.add('visible-category');
-            this.textContent = 'Less';
-        } else {
-            category.classList.remove('visible-category');
-            category.classList.add('hidden-category');
-            this.textContent = 'More';
-        }
-    });
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var category = document.getElementById('additionalCategory');
+            if (category.classList.contains('hidden-category')) {
+                category.classList.remove('hidden-category');
+                category.classList.add('visible-category');
+                this.textContent = 'Less';
+            } else {
+                category.classList.remove('visible-category');
+                category.classList.add('hidden-category');
+                this.textContent = 'More';
+            }
+        });
 
-      </script>
+    </script>
+
+    <script>
+        document.getElementById("phoneLink").addEventListener("click", function(event) {
+            if (!isMobileDevice()) {
+                event.preventDefault();  // Prevent the default 'tel' link behavior
+                togglePhoneNumber();
+            }
+            // On mobile devices, the 'tel' link will work as usual
+        });
+
+        function togglePhoneNumber() {
+            var phoneNumberElement = document.getElementById("phoneNumber");
+            phoneNumberElement.style.display = (phoneNumberElement.style.display === "none") ? "inline" : "none";
+        }
+
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+    </script>
     
 </body>
 </html>
