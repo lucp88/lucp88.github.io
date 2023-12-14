@@ -353,6 +353,8 @@ html {
 .contact-section h2 {
     text-align: center; /* Align text to the left */
     margin-bottom: 5px;
+    font-size: 18px; /* Set font size */
+
 }
 
 .contact-info {
