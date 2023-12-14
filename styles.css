@@ -362,8 +362,13 @@ html {
 }
 
 .contact-info a {
-    color: #0066cc; /* Color for links */
+    color: #478a8b; /* Color for links */
     text-decoration: none; /* Remove underline from links */
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
 }
 
 .email-icon {
@@ -380,6 +385,13 @@ html {
     height: auto; /* Maintain the aspect ratio */
     margin-right: 5px; /* Space between the icon and the phone number */
     border-radius: 5px;
+}
+
+.linkedin-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color from the parent element */
 }
 
 .linkedin-icon {
