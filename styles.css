@@ -276,7 +276,7 @@ html {
 }
 
 #toggleButton:hover {
-    background-color: #ae5e5e; /* Darker green on hover */
+    background-color: #ae5e5ec1; /* Darker green on hover */
 }
 
 
