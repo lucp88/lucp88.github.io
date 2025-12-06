@@ -617,7 +617,7 @@
 
             <div class="form-group">
                 <label class="form-label" for="codeInput">Geheime Code</label>
-                <input type="text" class="form-input" id="codeInput" placeholder="Voer je code in" maxlength="6" autocomplete="off">
+                <input type="text" class="form-input" id="codeInput" placeholder="Voer je code in" maxlength="20" autocomplete="off">
             </div>
 
             <button class="btn-reveal" onclick="revealMatch()">
@@ -702,14 +702,14 @@
 
         // Pairings data
         const pairings = {
-            'Laurens': { code: 'STAR24', recipient: 'Frank' },
-            'Bela': { code: 'KINGS3', recipient: 'Marjo' },
-            'Frank': { code: 'PEACE7', recipient: 'Anna' },
-            'Marjo': { code: 'JOY123', recipient: 'Tobias' },
-            'Anna': { code: 'HOPE88', recipient: 'Merve' },
-            'Tobias': { code: 'LOVE42', recipient: 'Lucas' },
-            'Merve': { code: 'FAITH5', recipient: 'Laurens' },
-            'Lucas': { code: 'LIGHT9', recipient: 'Bela' }
+            'Laurens': { code: 'BROODNODIG', recipient: 'Frank' },
+            'Bela': { code: 'NIRVANA', recipient: 'Marjo' },
+            'Frank': { code: 'NULPROCENTJE', recipient: 'Anna' },
+            'Marjo': { code: 'STEINER', recipient: 'Tobias' },
+            'Anna': { code: 'ZWEETPUT', recipient: 'Merve' },
+            'Tobias': { code: 'INKOMSTENBELASTING', recipient: 'Lucas' },
+            'Merve': { code: 'EVOLUTIELEER', recipient: 'Laurens' },
+            'Lucas': { code: 'STIJFKOP', recipient: 'Bela' }
         };
 
         function revealMatch() {
