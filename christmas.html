@@ -1,266 +1,609 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Gift Exchange</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-    
+    <title>Lootjes Trekken</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --night-deep: #0b1628;
+            --night-overlay: rgba(15, 30, 55, 0.55);
+            --snow-white: #f0f4f8;
+            --snow-blue: #c5d8e8;
+            --gold-warm: #e8c872;
+            --gold-light: #f5dfa0;
+            --gold-glow: rgba(232, 200, 114, 0.4);
+        }
+
+        html, body {
+            height: 100%;
+        }
+
         body {
-            background: linear-gradient(to bottom, #1a2f4a 0%, #2d4a6b 50%, #3d5a7b 100%);
             min-height: 100vh;
-            position: relative;
+            font-family: 'Crimson Pro', Georgia, serif;
+            background: var(--night-deep);
             overflow-x: hidden;
-        }
-        
-        .christmas-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
             position: relative;
-            z-index: 10;
         }
-        
-        .nativity-scene {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 300px;
-            background: linear-gradient(to top, #ffffff 0%, #e8f0ff 40%, transparent 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .star-of-bethlehem {
-            position: absolute;
-            top: 50px;
-            right: 100px;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, #fff9e6 0%, #ffd700 40%, transparent 70%);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: twinkle 3s ease-in-out infinite;
-            z-index: 5;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-        }
-        
-        .snow {
+
+        /* Background image - cozy winter cabin scene */
+        .bg-image {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            z-index: 0;
+            background: 
+                url('https://images.unsplash.com/photo-1482192505345-5655af888cc4?w=1920&q=85')
+                center center / cover no-repeat;
+        }
+
+        /* Night blue overlay for that Wiberg feeling */
+        .night-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                linear-gradient(to bottom, 
+                    rgba(8, 18, 35, 0.7) 0%,
+                    rgba(12, 25, 45, 0.5) 30%,
+                    rgba(15, 30, 55, 0.4) 60%,
+                    rgba(10, 22, 40, 0.6) 100%
+                );
+            mix-blend-mode: multiply;
+        }
+
+        /* Second overlay for color grading */
+        .color-grade {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 2;
+            background: 
+                radial-gradient(ellipse at 30% 70%, rgba(255, 200, 100, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 180, 80, 0.05) 0%, transparent 40%);
+            pointer-events: none;
         }
-        
-        .snowflake {
+
+        /* Painterly texture */
+        .texture-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Vignette for that cozy feeling */
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(5, 12, 25, 0.5) 100%);
+            pointer-events: none;
+        }
+
+        /* Stars layer */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .star {
             position: absolute;
-            top: -10px;
-            color: white;
-            font-size: 1em;
-            animation: fall linear infinite;
+            background: radial-gradient(circle, rgba(255, 248, 220, 1) 0%, rgba(255, 248, 220, 0) 70%);
+            border-radius: 50%;
+            animation: starTwinkle 4s ease-in-out infinite;
         }
-        
-        @keyframes fall {
-            to { transform: translateY(100vh); }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.9; transform: scale(1.1); }
         }
-        
-        .christmas-title {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            color: #ffd700;
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-weight: 600;
+
+        /* Gentle snowfall */
+        .snowfall {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 6;
+            pointer-events: none;
         }
-        
-        .subtitle {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            color: #fff9e6;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            font-style: italic;
+
+        .flake {
+            position: absolute;
+            top: -20px;
+            background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            animation: snowDrift linear infinite;
+            filter: blur(0.5px);
         }
-        
-        .gift-exchange-box {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 3px solid #8b4513;
+
+        @keyframes snowDrift {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) translateX(30px) rotate(360deg);
+            }
+        }
+
+        /* Main container */
+        .container {
             position: relative;
+            z-index: 100;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        
-        .gift-exchange-box::before {
-            content: '✦';
+
+        /* Title */
+        .title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--gold-light);
+            text-align: center;
+            margin-bottom: 6px;
+            text-shadow: 
+                0 2px 20px rgba(232, 200, 114, 0.5),
+                0 0 60px rgba(232, 200, 114, 0.2);
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--snow-blue);
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0.85;
+            letter-spacing: 0.03em;
+        }
+
+        /* Card */
+        .card {
+            background: linear-gradient(
+                165deg,
+                rgba(20, 35, 60, 0.88) 0%,
+                rgba(15, 28, 50, 0.92) 100%
+            );
+            border: 1px solid rgba(200, 215, 230, 0.12);
+            border-radius: 20px;
+            padding: 45px 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 25px 80px rgba(0, 0, 0, 0.5),
+                0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            color: #ffd700;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232, 200, 114, 0.3), transparent);
         }
-        
-        .instructions {
+
+        /* Decorative corner elements */
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.2;
+        }
+
+        .corner-tl {
+            top: 20px;
+            left: 20px;
+            border-top: 1px solid var(--gold-warm);
+            border-left: 1px solid var(--gold-warm);
+        }
+
+        .corner-br {
+            bottom: 20px;
+            right: 20px;
+            border-bottom: 1px solid var(--gold-warm);
+            border-right: 1px solid var(--gold-warm);
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: var(--snow-blue);
             text-align: center;
-            color: #2d4a6b;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            font-family: 'Raleway', sans-serif;
+            line-height: 1.75;
+            margin-bottom: 35px;
+            font-weight: 300;
         }
-        
-        .name-select {
-            text-align: center;
-            margin-bottom: 20px;
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 22px;
         }
-        
-        .name-select label {
-            font-family: 'Cinzel', serif;
-            color: #8b4513;
-            font-size: 1.2em;
-            margin-right: 15px;
+
+        .form-label {
+            display: block;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gold-warm);
+            margin-bottom: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-        
-        .name-select select {
-            padding: 10px 20px;
-            font-size: 1.1em;
-            border: 2px solid #8b4513;
-            border-radius: 5px;
-            background: white;
-            font-family: 'Raleway', sans-serif;
+
+        .form-select,
+        .form-input {
+            width: 100%;
+            padding: 15px 18px;
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.05rem;
+            background: rgba(8, 18, 35, 0.5);
+            border: 1px solid rgba(200, 215, 230, 0.15);
+            border-radius: 10px;
+            color: var(--snow-white);
+            transition: all 0.35s ease;
+            appearance: none;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23c5d8e8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
             cursor: pointer;
         }
-        
-        .code-input {
-            text-align: center;
-            margin-bottom: 30px;
+
+        .form-select option {
+            background: var(--night-deep);
+            color: var(--snow-white);
+            padding: 10px;
         }
-        
-        .code-input input {
-            padding: 12px 20px;
-            font-size: 1.2em;
-            border: 2px solid #8b4513;
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
+
+        .form-input::placeholder {
+            color: rgba(200, 215, 230, 0.35);
         }
-        
-        .reveal-button {
-            display: block;
-            margin: 0 auto;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-            color: white;
+
+        .form-select:focus,
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold-warm);
+            box-shadow: 
+                0 0 0 3px rgba(232, 200, 114, 0.1),
+                0 0 30px rgba(232, 200, 114, 0.08);
+        }
+
+        /* Button */
+        .btn-reveal {
+            width: 100%;
+            padding: 18px 28px;
+            margin-top: 15px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--night-deep);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-warm) 100%);
             border: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            font-family: 'Cinzel', serif;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 25px rgba(232, 200, 114, 0.35),
+                0 0 0 0 transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-reveal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+
+        .btn-reveal:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 35px rgba(232, 200, 114, 0.45),
+                0 0 50px rgba(232, 200, 114, 0.15);
+        }
+
+        .btn-reveal:hover::before {
+            left: 100%;
+        }
+
+        .btn-reveal:active {
+            transform: translateY(-1px);
+        }
+
+        /* Error message */
+        .error {
+            text-align: center;
+            color: #f0a0a0;
+            margin-top: 18px;
+            font-size: 0.95rem;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .error.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Result modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 12, 25, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: linear-gradient(
+                170deg,
+                rgba(25, 45, 75, 0.95) 0%,
+                rgba(18, 35, 60, 0.98) 100%
+            );
+            border: 1px solid rgba(232, 200, 114, 0.25);
+            border-radius: 24px;
+            padding: 55px 50px;
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            transform: scale(0.85) translateY(40px);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 
+                0 40px 100px rgba(0, 0, 0, 0.6),
+                0 0 80px rgba(232, 200, 114, 0.08);
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Gift icon animation */
+        .gift-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            animation: gentleFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(232, 200, 114, 0.3));
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        .result-intro {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--snow-blue);
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .result-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            text-shadow: 
+                0 2px 30px rgba(232, 200, 114, 0.6),
+                0 0 80px rgba(232, 200, 114, 0.3);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        .result-message {
+            font-size: 1rem;
+            color: var(--snow-blue);
+            opacity: 0.75;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .btn-close {
+            margin-top: 35px;
+            padding: 14px 45px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--snow-blue);
+            background: transparent;
+            border: 1px solid rgba(200, 215, 230, 0.25);
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
         }
-        
-        .reveal-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
-            background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+
+        .btn-close:hover {
+            background: rgba(232, 200, 114, 0.1);
+            border-color: var(--gold-warm);
+            color: var(--gold-warm);
         }
-        
-        .result-box {
+
+        /* Sparkle animation for result */
+        .sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            animation: sparkleRise 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes sparkleRise {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(-20px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+
+        /* Footer text */
+        .footer-text {
+            text-align: center;
             margin-top: 30px;
-            padding: 25px;
-            background: linear-gradient(135deg, #fff9e6 0%, #ffd700 100%);
-            border-radius: 10px;
-            text-align: center;
-            display: none;
-            border: 2px solid #8b4513;
-        }
-        
-        .result-box.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .result-text {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5em;
-            color: #2d4a6b;
-            margin: 0;
-        }
-        
-        .recipient-name {
-            font-weight: 600;
-            color: #8b4513;
-            font-size: 1.3em;
-        }
-        
-        .error-message {
-            color: #d32f2f;
-            text-align: center;
-            margin-top: 10px;
-            font-family: 'Raleway', sans-serif;
-        }
-        
-        .three-kings {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 40px;
-            opacity: 0.3;
-            transform: scaleX(-1);
-        }
-        
-        .bethlehem-text {
-            position: absolute;
-            bottom: 10px;
-            left: 30px;
-            font-family: 'Cinzel', serif;
-            color: rgba(139, 69, 19, 0.3);
-            font-size: 0.9em;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.85rem;
             font-style: italic;
+            color: var(--snow-blue);
+            opacity: 0.5;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 550px) {
+            .title {
+                font-size: 2.4rem;
+            }
+            
+            .card {
+                padding: 35px 28px;
+            }
+            
+            .modal-content {
+                padding: 45px 30px;
+            }
+            
+            .result-name {
+                font-size: 2.6rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="star-of-bethlehem"></div>
-    
-    <div class="snow" id="snow"></div>
-    
-    <div class="nativity-scene"></div>
-    
-    <div class="christmas-container">
-        <h1 class="christmas-title">Christmas Gift Exchange</h1>
-        <p class="subtitle">"For unto us a child is born, unto us a son is given"</p>
-        
-        <div class="gift-exchange-box">
-            <p class="instructions">
-                Select your name and enter your secret code to discover<br>
-                who you will be blessing with a gift this Christmas season.
+    <!-- Layered background -->
+    <div class="bg-image"></div>
+    <div class="night-overlay"></div>
+    <div class="color-grade"></div>
+    <div class="texture-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Snowfall -->
+    <div class="snowfall" id="snowfall"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1 class="title">Lootjes Trekken</h1>
+        <p class="subtitle">Een warme kerst begint met een klein geheim</p>
+
+        <div class="card">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-br"></div>
+
+            <p class="intro-text">
+                Kies je naam en vul je geheime code in<br>
+                om te ontdekken voor wie jij dit jaar<br>
+                een cadeautje mag uitzoeken.
             </p>
-            
-            <div class="name-select">
-                <label for="nameSelect">Your Name:</label>
-                <select id="nameSelect">
-                    <option value="">Choose your name...</option>
+
+            <div class="form-group">
+                <label class="form-label" for="nameSelect">Jouw Naam</label>
+                <select class="form-select" id="nameSelect">
+                    <option value="">Kies je naam...</option>
                     <option value="Laurens">Laurens</option>
                     <option value="Bela">Bela</option>
                     <option value="Frank">Frank</option>
@@ -271,49 +614,93 @@
                     <option value="Lucas">Lucas</option>
                 </select>
             </div>
-            
-            <div class="code-input">
-                <input type="text" id="codeInput" placeholder="Enter your code" maxlength="6">
+
+            <div class="form-group">
+                <label class="form-label" for="codeInput">Geheime Code</label>
+                <input type="text" class="form-input" id="codeInput" placeholder="Voer je code in" maxlength="6" autocomplete="off">
             </div>
-            
-            <button class="reveal-button" onclick="revealRecipient()">Reveal Your Recipient</button>
-            
-            <div class="error-message" id="errorMessage"></div>
-            
-            <div class="result-box" id="resultBox">
-                <p class="result-text">
-                    You will be giving a gift to:<br>
-                    <span class="recipient-name" id="recipientName"></span>
-                </p>
-            </div>
-            
-            <div class="three-kings">🐪🐪🐪</div>
-            <div class="bethlehem-text">Journey to Bethlehem</div>
+
+            <button class="btn-reveal" onclick="revealMatch()">
+                Onthul Je Lootje
+            </button>
+
+            <p class="error" id="error"></p>
+        </div>
+
+        <p class="footer-text">Vrolijk Kerstfeest 🎄</p>
+    </div>
+
+    <!-- Result modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="sparkles" id="sparkles"></div>
+            <div class="gift-icon">🎁</div>
+            <p class="result-intro">Jij geeft dit jaar een cadeautje aan...</p>
+            <p class="result-name" id="resultName"></p>
+            <p class="result-message">Veel plezier met uitzoeken!</p>
+            <button class="btn-close" onclick="closeModal()">Sluiten</button>
         </div>
     </div>
-    
+
     <script>
-        // Create snowfall effect
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * window.innerWidth + 'px';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+        // Create stars
+        function createStars() {
+            const container = document.getElementById('stars');
+            const count = 60;
             
-            document.getElementById('snow').appendChild(snowflake);
-            
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const size = 2 + Math.random() * 4;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.animationDuration = (3 + Math.random() * 3) + 's';
+                
+                container.appendChild(star);
+            }
         }
-        
-        setInterval(createSnowflake, 200);
-        
-        // Secret Santa pairings with codes
-        // Making sure no one is paired with each other reciprocally
+
+        // Create gentle snowfall
+        function createSnowflake() {
+            const container = document.getElementById('snowfall');
+            const flake = document.createElement('div');
+            flake.className = 'flake';
+            
+            const size = 3 + Math.random() * 6;
+            flake.style.width = size + 'px';
+            flake.style.height = size + 'px';
+            flake.style.left = Math.random() * 100 + '%';
+            flake.style.opacity = 0.3 + Math.random() * 0.5;
+            flake.style.animationDuration = (10 + Math.random() * 10) + 's';
+            
+            container.appendChild(flake);
+            
+            setTimeout(() => flake.remove(), 20000);
+        }
+
+        // Create sparkles in modal
+        function createSparkles() {
+            const container = document.getElementById('sparkles');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = (20 + Math.random() * 60) + '%';
+                    sparkle.style.top = (40 + Math.random() * 40) + '%';
+                    sparkle.style.animationDelay = (Math.random() * 0.5) + 's';
+                    container.appendChild(sparkle);
+                }, i * 100);
+            }
+        }
+
+        // Pairings data
         const pairings = {
             'Laurens': { code: 'STAR24', recipient: 'Frank' },
             'Bela': { code: 'KINGS3', recipient: 'Marjo' },
@@ -324,48 +711,56 @@
             'Merve': { code: 'FAITH5', recipient: 'Laurens' },
             'Lucas': { code: 'LIGHT9', recipient: 'Bela' }
         };
-        
-        function revealRecipient() {
-            const nameSelect = document.getElementById('nameSelect');
-            const codeInput = document.getElementById('codeInput');
-            const resultBox = document.getElementById('resultBox');
-            const recipientName = document.getElementById('recipientName');
-            const errorMessage = document.getElementById('errorMessage');
+
+        function revealMatch() {
+            const name = document.getElementById('nameSelect').value;
+            const code = document.getElementById('codeInput').value.toUpperCase().trim();
+            const error = document.getElementById('error');
             
-            // Clear previous messages
-            errorMessage.textContent = '';
-            resultBox.classList.remove('show');
+            error.classList.remove('visible');
             
-            const selectedName = nameSelect.value;
-            const enteredCode = codeInput.value.toUpperCase();
-            
-            if (!selectedName) {
-                errorMessage.textContent = 'Please select your name first.';
+            if (!name) {
+                error.textContent = 'Selecteer eerst je naam.';
+                error.classList.add('visible');
                 return;
             }
             
-            if (!enteredCode) {
-                errorMessage.textContent = 'Please enter your code.';
+            if (!code) {
+                error.textContent = 'Voer je geheime code in.';
+                error.classList.add('visible');
                 return;
             }
             
-            const pairing = pairings[selectedName];
+            const pairing = pairings[name];
             
-            if (pairing && pairing.code === enteredCode) {
-                recipientName.textContent = pairing.recipient;
-                resultBox.classList.add('show');
-                errorMessage.textContent = '';
+            if (pairing && pairing.code === code) {
+                document.getElementById('resultName').textContent = pairing.recipient;
+                document.getElementById('modal').classList.add('open');
+                document.body.style.overflow = 'hidden';
+                createSparkles();
             } else {
-                errorMessage.textContent = 'Invalid code. Please check with the organizer.';
+                error.textContent = 'Onjuiste code. Probeer het opnieuw.';
+                error.classList.add('visible');
             }
         }
-        
-        // Allow Enter key to reveal
-        document.getElementById('codeInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                revealRecipient();
-            }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Keyboard support
+        document.getElementById('codeInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') revealMatch();
         });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Initialize
+        createStars();
+        setInterval(createSnowflake, 250);
     </script>
 </body>
 </html>
