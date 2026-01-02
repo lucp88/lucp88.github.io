@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — CrossLoad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+        
+        .header a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 48px;
+        }
+        
+        .intro {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 12px;
+        }
+        
+        ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+        
+        ul li {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+        
+        a {
+            color: #10b981;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        
+        .rights-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .right-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        
+        .right-item strong {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+        
+        .right-item span {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 4px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 48px;
+        }
+        
+        .contact-box h2 {
+            margin-bottom: 12px;
+        }
+        
+        .contact-box p {
+            margin-bottom: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .gdpr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 24px;
+        }
+        
+        .gdpr-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/crossload.html">
+                <div class="logo">⚡</div>
+                <span class="logo-text">CrossLoad</span>
+            </a>
+        </header>
+        
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: January 2, 2025</p>
+        
+        <p class="intro">
+            CrossLoad ("we", "us", "our") is a training coach application for multi-sport athletes. This privacy policy explains how we collect, use, and protect your personal data. CrossLoad is operated by Lucas Peek, a sole proprietor (zzp'er) registered in the Netherlands.
+        </p>
+        
+        <section>
+            <h2>1. Data We Collect</h2>
+            
+            <h3>Account Information</h3>
+            <ul>
+                <li>Email address</li>
+                <li>Name (optional)</li>
+            </ul>
+            
+            <h3>Fitness Data from Garmin Connect</h3>
+            <ul>
+                <li>Activities (running, cycling, climbing, gym sessions)</li>
+                <li>Performance metrics (heart rate, pace, power, distance, duration)</li>
+                <li>Training status and recovery metrics</li>
+                <li>Historical activity data</li>
+            </ul>
+            
+            <h3>Usage Data</h3>
+            <ul>
+                <li>Conversations with the AI coach</li>
+                <li>Training plans and calendar data</li>
+                <li>App preferences and settings</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>2. How We Use Your Data</h2>
+            <p>We use your data to:</p>
+            <ul>
+                <li>Provide personalized training recommendations</li>
+                <li>Calculate training load across multiple sports</li>
+                <li>Generate and adjust training plans</li>
+                <li>Sync workouts to your Garmin device</li>
+                <li>Improve our coaching algorithms</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>3. AI Processing</h2>
+            <div class="highlight-box">
+                <p>CrossLoad uses Anthropic's Claude API to power the conversational coaching features. When you chat with the AI coach, your recent activity data and conversation history are sent to Anthropic for processing. Anthropic does not use this data to train their models. See <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a> for more details.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>4. Data Sharing</h2>
+            <p>We do not sell your personal data. We share data only with:</p>
+            <ul>
+                <li><strong>Garmin</strong> — to sync activities and workouts (via Garmin Connect API)</li>
+                <li><strong>Anthropic</strong> — to provide AI coaching features (via Claude API)</li>
+                <li><strong>Infrastructure providers</strong> — for hosting and data storage (AWS, EU region)</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>5. Data Storage & Security</h2>
+            <p>Your data is stored on secure servers within the European Union. We implement the following security measures:</p>
+            <ul>
+                <li>Encryption in transit (HTTPS/TLS)</li>
+                <li>Encryption at rest</li>
+                <li>Access limited to essential operations only</li>
+                <li>Regular security reviews</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>6. Your Rights (GDPR)</h2>
+            <p>As a user in the European Union, you have the following rights under the General Data Protection Regulation:</p>
+            
+            <div class="rights-grid">
+                <div class="right-item">
+                    <strong>Right to Access</strong>
+                    <span>Request a copy of your personal data</span>
+                </div>
+                <div class="right-item">
+                    <strong>Right to Rectification</strong>
+                    <span>Correct inaccurate or incomplete data</span>
+                </div>
+                <div class="right-item">
+                    <strong>Right to Erasure</strong>
+                    <span>Request deletion of your data ("right to be forgotten")</span>
+                </div>
+                <div class="right-item">
+                    <strong>Right to Portability</strong>
+                    <span>Export your data in a machine-readable format</span>
+                </div>
+                <div class="right-item">
+                    <strong>Right to Withdraw Consent</strong>
+                    <span>Withdraw consent for data processing at any time</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 16px;">To exercise any of these rights, contact us using the details below.</p>
+        </section>
+        
+        <section>
+            <h2>7. Data Retention</h2>
+            <p>We retain your data for as long as your account is active. If you delete your account, we will delete all your personal data within 30 days, except where we are legally required to retain it.</p>
+        </section>
+        
+        <section>
+            <h2>8. Cookies</h2>
+            <p>CrossLoad uses only essential cookies for authentication and session management. We do not use advertising or tracking cookies.</p>
+        </section>
+        
+        <section>
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this privacy policy from time to time. We will notify you of significant changes via email or in-app notification. Continued use of CrossLoad after changes constitutes acceptance of the updated policy.</p>
+        </section>
+        
+        <div class="contact-box">
+            <h2>Contact</h2>
+            <p>For privacy-related questions or to exercise your data rights:</p>
+            <p><strong>Lucas Peek</strong></p>
+            <p>Email: <a href="mailto:lucas@lucaspeek.com">lucas@lucaspeek.com</a></p>
+            <p>Location: Netherlands</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <div class="gdpr-badge">GDPR Compliant</div>
+        </div>
+        
+        <footer>
+            <p><a href="/crossload.html">Back to CrossLoad</a> · <a href="https://lucaspeek.com">lucaspeek.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

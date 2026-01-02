@@ -115,13 +115,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .sport-icon.run { background: rgba(16, 185, 129, 0.15); }
-        .sport-icon.climb { background: rgba(245, 158, 11, 0.15); }
-        .sport-icon.cycle { background: rgba(59, 130, 246, 0.15); }
-        .sport-icon.gym { background: rgba(139, 92, 246, 0.15); }
+        .sport-icon.run { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .sport-icon.climb { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .sport-icon.cycle { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .sport-icon.gym { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
         
         .sport-label {
             font-size: 11px;
@@ -129,6 +133,12 @@
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        
+        .sports-note {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 24px;
         }
         
         /* Features */
@@ -149,8 +159,18 @@
         }
         
         .feature-icon {
-            font-size: 20px;
+            font-size: 12px;
             flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: #10b981;
         }
         
         .feature h3 {
@@ -266,7 +286,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo">⚡</div>
+            <div class="logo">CL</div>
             <span class="logo-text">CrossLoad</span>
         </header>
         
@@ -274,24 +294,26 @@
             <div class="badge">Coming Soon</div>
             <h1>Your AI coach that <span>gets multi-sport</span></h1>
             <p class="subtitle">
-                Training for running, climbing, and cycling? CrossLoad understands how your sports interact — and coaches you accordingly.
+                Whether you run, climb, cycle, swim, or hit the gym — CrossLoad understands how your sports interact and coaches you accordingly.
             </p>
+            
+            <p class="sports-note">Works with any sport. Here are some examples:</p>
             
             <div class="sports">
                 <div class="sport">
-                    <div class="sport-icon run">🏃</div>
+                    <div class="sport-icon run">Run</div>
                     <span class="sport-label">Running</span>
                 </div>
                 <div class="sport">
-                    <div class="sport-icon climb">🧗</div>
+                    <div class="sport-icon climb">Climb</div>
                     <span class="sport-label">Climbing</span>
                 </div>
                 <div class="sport">
-                    <div class="sport-icon cycle">🚴</div>
+                    <div class="sport-icon cycle">Cycle</div>
                     <span class="sport-label">Cycling</span>
                 </div>
                 <div class="sport">
-                    <div class="sport-icon gym">💪</div>
+                    <div class="sport-icon gym">Gym</div>
                     <span class="sport-label">Gym</span>
                 </div>
             </div>
@@ -299,28 +321,28 @@
         
         <section class="features">
             <div class="feature">
-                <span class="feature-icon">💬</span>
+                <span class="feature-icon">01</span>
                 <div>
                     <h3>Conversational coaching</h3>
                     <p>Talk to your coach like a human. Adjust plans on the fly — no spreadsheets needed.</p>
                 </div>
             </div>
             <div class="feature">
-                <span class="feature-icon">⚖️</span>
+                <span class="feature-icon">02</span>
                 <div>
                     <h3>Cross-sport load balancing</h3>
                     <p>Your legs don't know the difference between cycling fatigue and running fatigue. Neither does CrossLoad.</p>
                 </div>
             </div>
             <div class="feature">
-                <span class="feature-icon">📅</span>
+                <span class="feature-icon">03</span>
                 <div>
                     <h3>Works around your life</h3>
                     <p>Fixed gym day on Wednesday? Weekly climbing session? Your plan adapts to your schedule.</p>
                 </div>
             </div>
             <div class="feature">
-                <span class="feature-icon">⌚</span>
+                <span class="feature-icon">04</span>
                 <div>
                     <h3>Syncs to your watch</h3>
                     <p>Workouts push directly to your Garmin. See targets and pacing on your wrist.</p>
@@ -340,7 +362,7 @@
         </section>
         
         <footer>
-            <p>Built by <a href="https://lucaspeek.com">Lucas Peek</a> · <a href="/crossload/privacy">Privacy Policy</a></p>
+            <p>Built by <a href="/peek-dynamics.html">Peek Dynamics</a> · <a href="/crossload/privacy">Privacy Policy</a></p>
         </footer>
     </div>
 </body>
