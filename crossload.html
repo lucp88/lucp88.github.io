@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossLoad — AI Training Coach for Multi-Sport Athletes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 80px;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 24px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        h1 {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        h1 span {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Sports icons */
+        .sports {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+        
+        .sport {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sport-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .sport-icon.run { background: rgba(16, 185, 129, 0.15); }
+        .sport-icon.climb { background: rgba(245, 158, 11, 0.15); }
+        .sport-icon.cycle { background: rgba(59, 130, 246, 0.15); }
+        .sport-icon.gym { background: rgba(139, 92, 246, 0.15); }
+        
+        .sport-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .feature-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Garmin badge */
+        .integration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            margin-bottom: 60px;
+        }
+        
+        .integration span {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .garmin-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .garmin-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .cta h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .cta a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">⚡</div>
+            <span class="logo-text">CrossLoad</span>
+        </header>
+        
+        <section class="hero">
+            <div class="badge">Coming Soon</div>
+            <h1>Your AI coach that <span>gets multi-sport</span></h1>
+            <p class="subtitle">
+                Training for running, climbing, and cycling? CrossLoad understands how your sports interact — and coaches you accordingly.
+            </p>
+            
+            <div class="sports">
+                <div class="sport">
+                    <div class="sport-icon run">🏃</div>
+                    <span class="sport-label">Running</span>
+                </div>
+                <div class="sport">
+                    <div class="sport-icon climb">🧗</div>
+                    <span class="sport-label">Climbing</span>
+                </div>
+                <div class="sport">
+                    <div class="sport-icon cycle">🚴</div>
+                    <span class="sport-label">Cycling</span>
+                </div>
+                <div class="sport">
+                    <div class="sport-icon gym">💪</div>
+                    <span class="sport-label">Gym</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <span class="feature-icon">💬</span>
+                <div>
+                    <h3>Conversational coaching</h3>
+                    <p>Talk to your coach like a human. Adjust plans on the fly — no spreadsheets needed.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚖️</span>
+                <div>
+                    <h3>Cross-sport load balancing</h3>
+                    <p>Your legs don't know the difference between cycling fatigue and running fatigue. Neither does CrossLoad.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📅</span>
+                <div>
+                    <h3>Works around your life</h3>
+                    <p>Fixed gym day on Wednesday? Weekly climbing session? Your plan adapts to your schedule.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⌚</span>
+                <div>
+                    <h3>Syncs to your watch</h3>
+                    <p>Workouts push directly to your Garmin. See targets and pacing on your wrist.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="integration">
+            <span>Powered by</span>
+            <div class="garmin-badge">Garmin Connect</div>
+        </div>
+        
+        <section class="cta">
+            <h2>Interested in early access?</h2>
+            <p>CrossLoad is currently in development. Drop me a line if you want to try it.</p>
+            <a href="mailto:lucas@lucaspeek.com">Get in touch</a>
+        </section>
+        
+        <footer>
+            <p>Built by <a href="https://lucaspeek.com">Lucas Peek</a> · <a href="/crossload/privacy">Privacy Policy</a></p>
+        </footer>
+    </div>
+</body>
+</html>
